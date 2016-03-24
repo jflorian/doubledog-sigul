@@ -24,6 +24,8 @@ class sigul::params {
             $packages = 'sigul'
 
             $bridge_services = 'sigul_bridge'
+            $client_services = 'sigul_client'
+            $server_services = 'sigul_server'
 
         }
 
