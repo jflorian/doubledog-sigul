@@ -9,10 +9,16 @@
 #
 # ==== Required
 #
+# [*bridge_cert_nickname*]
+#   This must be the nickname given to the Sigul Bridge's certificate within
+#   the NSS certificate database.  The named certificaate is used to
+#   authenticate the Sigul Bridge to the Sigul Server.
+#
 # [*client_ca_cert*]
 #   Puppet source URI providing the CA certificate which signed "sigul_cert".
 #   This must be in PEM format and include all intermediate CA certificates,
-#   sorted and concatenated from the leaf CA to the root CA.
+#   sorted and concatenated from the leaf CA to the root CA.  This
+#   certificaate is used to authenticate the Sigul Bridge to the Koji Hub.
 #
 # [*downloads*]
 #   URL of your Koji package download site.
@@ -30,7 +36,8 @@
 #
 # [*sigul_cert*]
 #   Puppet source URI providing the Sigul Bridge's identity certificate which
-#   must be in PEM format.
+#   must be in PEM format.  This certificaate is used to authenticate the
+#   Sigul Bridge to the Koji Hub.
 #
 # [*web*]
 #   URL of your Koji Web service.
@@ -60,6 +67,7 @@
 
 
 class sigul::bridge (
+        $bridge_cert_nickname,
         $client_ca_cert,
         $downloads,
         $hub,
