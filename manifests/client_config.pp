@@ -52,20 +52,14 @@ define sigul::client_config (
         $ensure='present',
         $owner='root',
         $group='sigul',
-        $filename=undef,
+        $filename=$title,
         $nss_password=undef,
     ) {
 
     include '::sigul'
     include '::sigul::params'
 
-    if $filename {
-        $filename_ = $filename
-    } else {
-        $filename_ = $name
-    }
-
-    file { $filename_:
+    file { $filename:
         ensure    => $ensure,
         owner     => $owner,
         group     => $group,
