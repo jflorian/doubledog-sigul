@@ -19,6 +19,11 @@
 # [*nss_password*]
 #   Password used to protect the NSS certificate database.
 #
+# [*server_cert_nickname*]
+#   This must be the nickname given to the Sigul Server's certificate within
+#   the NSS certificate database.  The named certificaate is used to
+#   authenticate the Sigul Server to the Sigul Bridge.
+#
 # ==== Optional
 #
 # [*database_path*]
@@ -43,6 +48,7 @@
 class sigul::server (
         $bridge_hostname,
         $nss_password,
+        $server_cert_nickname,
         $database_path='/var/lib/sigul/server.sqlite',
         $enable=true,
         $ensure='running',
