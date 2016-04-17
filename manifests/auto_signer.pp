@@ -103,7 +103,7 @@ class sigul::auto_signer (
     user { $user:
         comment => 'Automated Sigul Signer',
         home    => $ass_home,
-        shell   => '/bin/false',
+        shell   => '/sbin/nologin',
         system  => true,
     }
 
