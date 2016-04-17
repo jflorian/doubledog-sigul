@@ -118,10 +118,7 @@ class sigul::auto_signer (
     }
 
     file {
-        $ass_home:
-            ensure => directory,
-            ;
-        $koji_dir:
+        [$ass_home, $koji_dir, $sigul_dir]:
             ensure => directory,
             ;
         "${koji_dir}/client.crt":
