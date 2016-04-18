@@ -120,6 +120,7 @@ class sigul::auto_signer (
     file {
         [$ass_home, $koji_dir, $sigul_dir]:
             ensure => directory,
+            mode   => '0700',
             ;
         "${koji_dir}/client.crt":
             source => $client_cert,
