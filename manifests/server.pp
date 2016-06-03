@@ -68,12 +68,6 @@ class sigul::server (
         subscribe => Package[$::sigul::params::packages],
     }
 
-    exec { 'sigul_server_create_db':
-        creates => $database_path,
-        notify  => File[$database_path],
-        require => Package[$::sigul::params::packages],
-    } ->
-
     file {
         '/etc/sigul/server.conf':
             content => template('sigul/server.conf'),
@@ -84,7 +78,13 @@ class sigul::server (
             mode    => '0600',
             seltype => 'var_lib_t',
             ;
-    }
+    } ->
+
+    exec { 'sigul_server_create_db':
+        creates => $database_path,
+        require => Package[$::sigul::params::packages],
+        user    => 'sigul',
+    } ->
 
     service { $::sigul::params::server_services:
         ensure     => $ensure,
