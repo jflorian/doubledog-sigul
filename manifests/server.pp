@@ -36,6 +36,11 @@
 # [*ensure*]
 #   Instance is to be 'running' (default) or 'stopped'.
 #
+# [*gpg_kludge*]
+#   This must be set to true on hosts where gpg defaults to gpg2 until such
+#   time that Sigul can work acceptably with gpg2.  For more details, see:
+#       https://bugzilla.redhat.com/show_bug.cgi?id=1329747
+#
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
@@ -52,6 +57,7 @@ class sigul::server (
         $database_path='/var/lib/sigul/server.sqlite',
         $enable=true,
         $ensure='running',
+        $gpg_kludge=false,
     ) inherits ::sigul::params {
 
     include '::sigul'
@@ -66,6 +72,17 @@ class sigul::server (
         before    => Service[$::sigul::params::server_services],
         notify    => Service[$::sigul::params::server_services],
         subscribe => Package[$::sigul::params::packages],
+    }
+
+    if $gpg_kludge {
+        package { $::sigul::params::gpg_kludge_packages:
+            ensure => installed,
+        } ->
+
+        file { '/usr/bin/gpg':
+            ensure => 'link',
+            target => 'gpg1',
+        }
     }
 
     file {

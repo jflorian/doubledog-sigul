@@ -22,6 +22,7 @@ class sigul::params {
             # The Client, Bridge and Server are all provided by the same
             # package.
             $packages = 'sigul'
+            $gpg_kludge_packages = ['gnupg1']
 
             $bridge_services = 'sigul_bridge'
             $client_services = 'sigul_client'
