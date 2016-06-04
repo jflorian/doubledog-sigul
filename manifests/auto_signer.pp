@@ -22,6 +22,11 @@
 #   authentication to the Koji-Web service.  The certificate must be in PEM
 #   format.
 #
+# [*client_cert_nickname*]
+#   This must be the nickname given to the user's Sigul Client certificate
+#   within their NSS certificate database.  The named certificate is used to
+#   authenticate this Sigul Client to the Sigul Bridge.
+#
 # [*ca_cert*]
 #   Puppet source URI providing the CA certificate that signed "client_cert".
 #
@@ -88,6 +93,7 @@ class sigul::auto_signer (
         $server_hostname,
         $nss_password,
         $key_map,
+        $client_cert_nickname,
         $debug=false,
         $interval=1,
         $user='ass',
@@ -138,9 +144,10 @@ class sigul::auto_signer (
     } ->
 
     ::sigul::client_config { "${sigul_dir}/client.conf":
-        bridge_hostname => $bridge_hostname,
-        server_hostname => $server_hostname,
-        nss_password    => $nss_password,
+        bridge_hostname      => $bridge_hostname,
+        client_cert_nickname => $client_cert_nickname,
+        server_hostname      => $server_hostname,
+        nss_password         => $nss_password,
     } ->
 
     ::cron::jobfile { 'sigulsign_unsigned':

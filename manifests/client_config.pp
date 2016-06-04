@@ -26,6 +26,12 @@
 # [*ensure*]
 #   Instance is to be 'present' (default) or 'absent'.
 #
+# [*client_cert_nickname*]
+#   This must be the nickname given to the Sigul Clients's certificate within
+#   their NSS certificate database.  The named certificaate is used to
+#   authenticate this Sigul Client to the Sigul Bridge.  The default is
+#   'sigul-client-cert'.
+#
 # [*owner*]
 #   User name or UID to own the configuration file.
 #
@@ -49,11 +55,12 @@
 define sigul::client_config (
         $bridge_hostname,
         $server_hostname,
+        $client_cert_nickname='sigul-client-cert',
         $ensure='present',
-        $owner='root',
-        $group='sigul',
         $filename=$title,
+        $group='sigul',
         $nss_password=undef,
+        $owner='root',
     ) {
 
     include '::sigul'
