@@ -121,8 +121,9 @@ class sigul::bridge (
 
     file {
         '/etc/sigul/bridge.conf':
-            owner   => 'root',
-            content => template('sigul/bridge.conf'),
+            owner     => 'root',
+            content   => template('sigul/bridge.conf'),
+            show_diff => false,
             ;
         $koji_dir:
             ensure => directory,

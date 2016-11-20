@@ -87,7 +87,8 @@ class sigul::server (
 
     file {
         '/etc/sigul/server.conf':
-            content => template('sigul/server.conf'),
+            content   => template('sigul/server.conf'),
+            show_diff => false,
             ;
 
         $database_path:

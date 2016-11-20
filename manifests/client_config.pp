@@ -76,6 +76,7 @@ define sigul::client_config (
         seltype   => 'etc_t',
         subscribe => Package[$::sigul::params::packages],
         content   => template('sigul/client.conf'),
+        show_diff => false,
     }
 
 }
