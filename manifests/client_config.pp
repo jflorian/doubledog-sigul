@@ -38,6 +38,9 @@
 # [*group*]
 #   Group name or GID to which the configuration file belongs.
 #
+# [*mode*]
+#   File mode for the configuration file.
+#
 # [*filename*]
 #   This may be used in place of "namevar" if it's beneficial to give namevar
 #   an arbitrary value.  This should specify the absolute filesystem path to
@@ -59,6 +62,7 @@ define sigul::client_config (
         $ensure='present',
         $filename=$title,
         $group='sigul',
+        $mode='0600',
         $nss_password=undef,
         $owner='root',
     ) {
@@ -70,7 +74,7 @@ define sigul::client_config (
         ensure    => $ensure,
         owner     => $owner,
         group     => $group,
-        mode      => '0644',
+        mode      => $mode,
         seluser   => 'system_u',
         selrole   => 'object_r',
         seltype   => 'etc_t',
