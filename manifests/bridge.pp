@@ -63,7 +63,7 @@
 #
 # === Copyright
 #
-# Copyright 2016 John Florian
+# Copyright 2016-2017 John Florian
 
 
 class sigul::bridge (
@@ -107,19 +107,18 @@ class sigul::bridge (
             ;
     }
 
-    File {
-        owner     => 'sigul',
-        group     => 'sigul',
-        mode      => '0640',
-        seluser   => 'system_u',
-        selrole   => 'object_r',
-        seltype   => 'etc_t',
-        before    => Service[$::sigul::params::bridge_services],
-        notify    => Service[$::sigul::params::bridge_services],
-        subscribe => Package[$::sigul::params::packages],
-    }
-
     file {
+        default:
+            owner     => 'sigul',
+            group     => 'sigul',
+            mode      => '0640',
+            seluser   => 'system_u',
+            selrole   => 'object_r',
+            seltype   => 'etc_t',
+            before    => Service[$::sigul::params::bridge_services],
+            notify    => Service[$::sigul::params::bridge_services],
+            subscribe => Package[$::sigul::params::packages],
+            ;
         '/etc/sigul/bridge.conf':
             owner     => 'root',
             content   => template('sigul/bridge.conf'),

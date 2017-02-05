@@ -62,18 +62,6 @@ class sigul::server (
 
     include '::sigul'
 
-    File {
-        owner     => 'root',
-        group     => 'sigul',
-        mode      => '0640',
-        seluser   => 'system_u',
-        selrole   => 'object_r',
-        seltype   => 'etc_t',
-        before    => Service[$::sigul::params::server_services],
-        notify    => Service[$::sigul::params::server_services],
-        subscribe => Package[$::sigul::params::packages],
-    }
-
     if $gpg_kludge {
         package { $::sigul::params::gpg_kludge_packages:
             ensure => installed,
@@ -86,11 +74,21 @@ class sigul::server (
     }
 
     file {
+        default:
+            owner     => 'root',
+            group     => 'sigul',
+            mode      => '0640',
+            seluser   => 'system_u',
+            selrole   => 'object_r',
+            seltype   => 'etc_t',
+            before    => Service[$::sigul::params::server_services],
+            notify    => Service[$::sigul::params::server_services],
+            subscribe => Package[$::sigul::params::packages],
+            ;
         '/etc/sigul/server.conf':
             content   => template('sigul/server.conf'),
             show_diff => false,
             ;
-
         $database_path:
             owner   => 'sigul',
             mode    => '0600',
