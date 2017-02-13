@@ -41,13 +41,21 @@
 #   time that Sigul can work acceptably with gpg2.  For more details, see:
 #       https://bugzilla.redhat.com/show_bug.cgi?id=1329747
 #
+# [*gpg_kludge_packages*]
+#   An array of package names needed for the kludging the Sigul installation
+#   to work around issues with GPGME.  This is only used if "gpg_kludge" is
+#   true.
+#
+# [*service*]
+#   The service name of the Sigul Server.
+#
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
 #
 # === Copyright
 #
-# Copyright 2016 John Florian
+# Copyright 2016-2017 John Florian
 
 
 class sigul::server (
@@ -58,12 +66,14 @@ class sigul::server (
         $enable=true,
         $ensure='running',
         $gpg_kludge=false,
-    ) inherits ::sigul::params {
+        Array[String[1], 1]     $gpg_kludge_packages,
+        String[1]               $service,
+    ) {
 
     include '::sigul'
 
     if $gpg_kludge {
-        package { $::sigul::params::gpg_kludge_packages:
+        package { $gpg_kludge_packages:
             ensure => installed,
         } ->
 
@@ -81,9 +91,9 @@ class sigul::server (
             seluser   => 'system_u',
             selrole   => 'object_r',
             seltype   => 'etc_t',
-            before    => Service[$::sigul::params::server_services],
-            notify    => Service[$::sigul::params::server_services],
-            subscribe => Package[$::sigul::params::packages],
+            before    => Service[$service],
+            notify    => Service[$service],
+            subscribe => Package[$::sigul::packages],
             ;
         '/etc/sigul/server.conf':
             content   => template('sigul/server.conf'),
@@ -98,16 +108,16 @@ class sigul::server (
 
     exec { 'sigul_server_create_db':
         creates => $database_path,
-        require => Package[$::sigul::params::packages],
+        require => Package[$::sigul::packages],
         user    => 'sigul',
     } ->
 
-    service { $::sigul::params::server_services:
+    service { $service:
         ensure     => $ensure,
         enable     => $enable,
         hasrestart => true,
         hasstatus  => true,
-        subscribe  => Package[$::sigul::params::packages],
+        subscribe  => Package[$::sigul::packages],
     }
 
 }

@@ -68,7 +68,6 @@ define sigul::client_config (
     ) {
 
     include '::sigul'
-    include '::sigul::params'
 
     file { $filename:
         ensure    => $ensure,
@@ -78,7 +77,7 @@ define sigul::client_config (
         seluser   => 'system_u',
         selrole   => 'object_r',
         seltype   => 'etc_t',
-        subscribe => Package[$::sigul::params::packages],
+        subscribe => Package[$::sigul::packages],
         content   => template('sigul/client.conf'),
         show_diff => false,
     }

@@ -1,0 +1,9 @@
+---
+sigul::packages:
+    - sigul
+
+sigul::bridge::service:             sigul_bridge
+
+sigul::server::gpg_kludge_packages:
+    - gnupg1
+sigul::server::service:             sigul_server

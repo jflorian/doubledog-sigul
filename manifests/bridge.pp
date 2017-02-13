@@ -57,6 +57,9 @@
 #   Directory that is to contain the Koji integration files: configuration,
 #   certificates, keys, etc.  Defaults to "/var/lib/sigul/.koji".
 #
+# [*service*]
+#   The service name of the Sigul Bridge.
+#
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
@@ -79,7 +82,8 @@ class sigul::bridge (
         $enable=true,
         $ensure='running',
         $koji_dir='/var/lib/sigul/.koji',
-    ) inherits ::sigul::params {
+        String[1]               $service,
+    ) {
 
     include '::sigul'
 
@@ -91,19 +95,19 @@ class sigul::bridge (
             cert_name   => 'client-ca-chain',
             cert_path   => $koji_dir,
             cert_source => $client_ca_cert,
-            notify      => Service[$::sigul::params::bridge_services],
+            notify      => Service[$service],
             ;
         'sigul-hub-ca-chain':
             cert_name   => 'hub-ca-chain',
             cert_path   => $koji_dir,
             cert_source => $hub_ca_cert,
-            notify      => Service[$::sigul::params::bridge_services],
+            notify      => Service[$service],
             ;
         'sigul':
             cert_name   => 'sigul',
             cert_path   => $koji_dir,
             cert_source => $sigul_cert,
-            notify      => Service[$::sigul::params::bridge_services],
+            notify      => Service[$service],
             ;
     }
 
@@ -115,9 +119,9 @@ class sigul::bridge (
             seluser   => 'system_u',
             selrole   => 'object_r',
             seltype   => 'etc_t',
-            before    => Service[$::sigul::params::bridge_services],
-            notify    => Service[$::sigul::params::bridge_services],
-            subscribe => Package[$::sigul::params::packages],
+            before    => Service[$service],
+            notify    => Service[$service],
+            subscribe => Package[$::sigul::packages],
             ;
         '/etc/sigul/bridge.conf':
             owner     => 'root',
@@ -148,12 +152,12 @@ class sigul::bridge (
             ;
     }
 
-    service { $::sigul::params::bridge_services:
+    service { $service:
         ensure     => $ensure,
         enable     => $enable,
         hasrestart => true,
         hasstatus  => true,
-        subscribe  => Package[$::sigul::params::packages],
+        subscribe  => Package[$::sigul::packages],
     }
 
 }
