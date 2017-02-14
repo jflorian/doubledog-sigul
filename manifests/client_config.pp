@@ -28,7 +28,7 @@
 #
 # [*client_cert_nickname*]
 #   This must be the nickname given to the Sigul Clients's certificate within
-#   their NSS certificate database.  The named certificaate is used to
+#   their NSS certificate database.  The named certificate is used to
 #   authenticate this Sigul Client to the Sigul Bridge.  The default is
 #   'sigul-client-cert'.
 #

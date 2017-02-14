@@ -21,7 +21,7 @@
 #
 # [*server_cert_nickname*]
 #   This must be the nickname given to the Sigul Server's certificate within
-#   the NSS certificate database.  The named certificaate is used to
+#   the NSS certificate database.  The named certificate is used to
 #   authenticate the Sigul Server to the Sigul Bridge.
 #
 # ==== Optional
