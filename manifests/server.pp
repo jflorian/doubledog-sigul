@@ -21,7 +21,7 @@
 #
 # [*server_cert_nickname*]
 #   This must be the nickname given to the Sigul Server's certificate within
-#   the NSS certificate database.  The named certificaate is used to
+#   the NSS certificate database.  The named certificate is used to
 #   authenticate the Sigul Server to the Sigul Bridge.
 #
 # ==== Optional
@@ -34,12 +34,22 @@
 #   Instance is to be started at boot.  Either true (default) or false.
 #
 # [*ensure*]
-#   Instance is to be 'running' (default) or 'stopped'.
+#   Instance is to be 'running' (default) or 'stopped'.  Alternatively,
+#   a Boolean value may also be used with true equivalent to 'running' and
+#   false equivalent to 'stopped'.
 #
 # [*gpg_kludge*]
 #   This must be set to true on hosts where gpg defaults to gpg2 until such
 #   time that Sigul can work acceptably with gpg2.  For more details, see:
 #       https://bugzilla.redhat.com/show_bug.cgi?id=1329747
+#
+# [*gpg_kludge_packages*]
+#   An array of package names needed for the kludging the Sigul installation
+#   to work around issues with GPGME.  This is only used if "gpg_kludge" is
+#   true.
+#
+# [*service*]
+#   The service name of the Sigul Server.
 #
 # === Authors
 #
@@ -47,23 +57,25 @@
 #
 # === Copyright
 #
-# Copyright 2016 John Florian
+# Copyright 2016-2017 John Florian
 
 
 class sigul::server (
-        $bridge_hostname,
-        $nss_password,
-        $server_cert_nickname,
-        $database_path='/var/lib/sigul/server.sqlite',
-        $enable=true,
-        $ensure='running',
-        $gpg_kludge=false,
-    ) inherits ::sigul::params {
+        String[1]               $bridge_hostname,
+        String[1]               $nss_password,
+        String[1]               $server_cert_nickname,
+        Variant[Boolean, Enum['running', 'stopped']] $ensure='running',
+        String[1]               $database_path='/var/lib/sigul/server.sqlite',
+        Boolean                 $enable=true,
+        Boolean                 $gpg_kludge=false,
+        Array[String[1], 1]     $gpg_kludge_packages,
+        String[1]               $service,
+    ) {
 
     include '::sigul'
 
     if $gpg_kludge {
-        package { $::sigul::params::gpg_kludge_packages:
+        package { $gpg_kludge_packages:
             ensure => installed,
         } ->
 
@@ -81,9 +93,9 @@ class sigul::server (
             seluser   => 'system_u',
             selrole   => 'object_r',
             seltype   => 'etc_t',
-            before    => Service[$::sigul::params::server_services],
-            notify    => Service[$::sigul::params::server_services],
-            subscribe => Package[$::sigul::params::packages],
+            before    => Service[$service],
+            notify    => Service[$service],
+            subscribe => Package[$::sigul::packages],
             ;
         '/etc/sigul/server.conf':
             content   => template('sigul/server.conf'),
@@ -98,16 +110,16 @@ class sigul::server (
 
     exec { 'sigul_server_create_db':
         creates => $database_path,
-        require => Package[$::sigul::params::packages],
+        require => Package[$::sigul::packages],
         user    => 'sigul',
     } ->
 
-    service { $::sigul::params::server_services:
+    service { $service:
         ensure     => $ensure,
         enable     => $enable,
         hasrestart => true,
         hasstatus  => true,
-        subscribe  => Package[$::sigul::params::packages],
+        subscribe  => Package[$::sigul::packages],
     }
 
 }

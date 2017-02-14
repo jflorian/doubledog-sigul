@@ -11,19 +11,23 @@
 #
 # ==== Optional
 #
+# [*packages*]
+#   An array of package names needed for the Sigul installation.
+#
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
 #
 # === Copyright
 #
-# Copyright 2016 John Florian
+# Copyright 2016-2017 John Florian
 
 
 class sigul (
-    ) inherits ::sigul::params {
+        Array[String[1], 1]     $packages,
+    ) {
 
-    package { $::sigul::params::packages:
+    package { $packages:
         ensure => installed,
     }
 
