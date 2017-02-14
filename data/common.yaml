@@ -2,8 +2,15 @@
 sigul::packages:
     - sigul
 
+sigul::bridge::enable:              true
+sigul::bridge::ensure:              running
+sigul::bridge::koji_dir:            /var/lib/sigul/.koji
 sigul::bridge::service:             sigul_bridge
 
+sigul::server::database_path:       /var/lib/sigul/server.sqlite
+sigul::server::enable:              true
+sigul::server::ensure:              running
+sigul::server::gpg_kludge:          false
 sigul::server::gpg_kludge_packages:
     - gnupg1
 sigul::server::service:             sigul_server

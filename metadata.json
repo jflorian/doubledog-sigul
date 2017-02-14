@@ -1,6 +1,6 @@
 {
 	"name": "doubledog-sigul",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": "John Florian",
 	"license": "GPL-3.0",
 	"summary": "A module to manage Sigul servers, bridges and clients",

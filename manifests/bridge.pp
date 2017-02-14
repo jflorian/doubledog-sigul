@@ -81,9 +81,9 @@ class sigul::bridge (
         String[1]               $sigul_cert,
         String[1]               $top_dir,
         String[1]               $web,
-        Variant[Boolean, Enum['running', 'stopped']] $ensure='running',
-        Boolean                 $enable=true,
-        String[1]               $koji_dir='/var/lib/sigul/.koji',
+        Variant[Boolean, Enum['running', 'stopped']] $ensure,
+        Boolean                 $enable,
+        String[1]               $koji_dir,
         String[1]               $service,
     ) {
 
