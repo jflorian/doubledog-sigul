@@ -51,7 +51,9 @@
 #   Instance is to be started at boot.  Either true (default) or false.
 #
 # [*ensure*]
-#   Instance is to be 'running' (default) or 'stopped'.
+#   Instance is to be 'running' (default) or 'stopped'.  Alternatively,
+#   a Boolean value may also be used with true equivalent to 'running' and
+#   false equivalent to 'stopped'.
 #
 # [*koji_dir*]
 #   Directory that is to contain the Koji integration files: configuration,
@@ -70,18 +72,18 @@
 
 
 class sigul::bridge (
-        $bridge_cert_nickname,
-        $client_ca_cert,
-        $downloads,
-        $hub,
-        $hub_ca_cert,
-        $nss_password,
-        $sigul_cert,
-        $top_dir,
-        $web,
-        $enable=true,
-        $ensure='running',
-        $koji_dir='/var/lib/sigul/.koji',
+        String[1]               $bridge_cert_nickname,
+        String[1]               $client_ca_cert,
+        String[1]               $downloads,
+        String[1]               $hub,
+        String[1]               $hub_ca_cert,
+        String[1]               $nss_password,
+        String[1]               $sigul_cert,
+        String[1]               $top_dir,
+        String[1]               $web,
+        Variant[Boolean, Enum['running', 'stopped']] $ensure='running',
+        Boolean                 $enable=true,
+        String[1]               $koji_dir='/var/lib/sigul/.koji',
         String[1]               $service,
     ) {
 

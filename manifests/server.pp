@@ -34,7 +34,9 @@
 #   Instance is to be started at boot.  Either true (default) or false.
 #
 # [*ensure*]
-#   Instance is to be 'running' (default) or 'stopped'.
+#   Instance is to be 'running' (default) or 'stopped'.  Alternatively,
+#   a Boolean value may also be used with true equivalent to 'running' and
+#   false equivalent to 'stopped'.
 #
 # [*gpg_kludge*]
 #   This must be set to true on hosts where gpg defaults to gpg2 until such
@@ -59,13 +61,13 @@
 
 
 class sigul::server (
-        $bridge_hostname,
-        $nss_password,
-        $server_cert_nickname,
-        $database_path='/var/lib/sigul/server.sqlite',
-        $enable=true,
-        $ensure='running',
-        $gpg_kludge=false,
+        String[1]               $bridge_hostname,
+        String[1]               $nss_password,
+        String[1]               $server_cert_nickname,
+        Variant[Boolean, Enum['running', 'stopped']] $ensure='running',
+        String[1]               $database_path='/var/lib/sigul/server.sqlite',
+        Boolean                 $enable=true,
+        Boolean                 $gpg_kludge=false,
         Array[String[1], 1]     $gpg_kludge_packages,
         String[1]               $service,
     ) {
