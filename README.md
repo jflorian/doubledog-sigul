@@ -33,6 +33,7 @@ This module lets you manage Sigul for its Bridge and Server as well as its Clien
 **Classes:**
 
 * [sigul](#sigul-class)
+* [sigul::bridge](#sigulbridge-class)
 
 **Defined types:**
 
@@ -46,6 +47,50 @@ Server.
 
 ##### `packages`
 An array of package names needed for the Sigul installation.  The default should be correct for supported platforms.
+
+
+#### sigul::bridge class
+
+This class manages a host as a Sigul Bridge to relay requests between Sigul Clients and the Sigul Server.
+
+##### `bridge_cert_nickname` (required)
+This must be the nickname given to the Sigul Bridge's certificate within the NSS certificate database.  The named certificate is used to authenticate the Sigul Bridge to the Sigul Server.
+
+##### `client_ca_cert` (required)
+Puppet source URI providing the CA certificate which signed `sigul_cert`.  This must be in PEM format and include all intermediate CA certificates, sorted and concatenated from the leaf CA to the root CA.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
+
+##### `downloads` (required)
+URL of your Koji package download site.
+
+##### `hub` (required)
+URL of your Koji Hub service.
+
+##### `hub_ca_cert` (required)
+Puppet source URI providing the CA certificate which signed the Koji Hub certificate.  This must be in PEM format and include all intermediate CA certificates, sorted and concatenated from the leaf CA to the root CA.
+
+##### `nss_password` (required)
+Password used to protect the NSS certificate database.
+
+##### `sigul_cert` (required)
+Puppet source URI providing the Sigul Bridge's identity certificate which must be in PEM format.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
+
+##### `web` (required)
+URL of your Koji Web service.
+
+##### `top_dir` (required)
+Directory containing Koji's `repos/` directory.
+
+##### `enable`
+Instance is to be started at boot.  Either `true` (default) or `false`.
+
+##### `ensure`
+Instance is to be `running` (default) or `stopped`.  Alternatively, a Boolean value may also be used with `true` equivalent to `running` and `false` equivalent to `stopped`.
+
+##### `koji_dir`
+Directory that is to contain the Koji integration files: configuration, certificates, keys, etc.  Defaults to `/var/lib/sigul/.koji`.
+
+##### `service`
+The service name of the Sigul Bridge.
 
 
 ### Defined types
