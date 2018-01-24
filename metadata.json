@@ -10,7 +10,7 @@
         "operatingsystemmajrelease": "7"
     }, {
         "operatingsystem": "Fedora",
-        "operatingsystemrelease": ["23", "24", "25"]
+        "operatingsystemrelease": ["25", "26", "27"]
     }],
     "dependencies": [{
         "name": "doubledog/openssl",
