@@ -38,6 +38,8 @@ This module lets you manage Sigul for its Bridge and Server as well as its Clien
 
 **Defined types:**
 
+* [sigul::client\_config](#sigulclientconfig-defined-type)
+
 
 ### Classes
 
@@ -130,6 +132,40 @@ The service name of the Sigul Server.
 
 
 ### Defined types
+
+#### sigul::client\_config defined type
+
+This defined type manages a Sigul Client's configuration file.
+
+##### `namevar` (required)
+An arbitrary identifier for the client configuration instance unless the `filename` parameter is not set in which case this must provide the value normally set with the `filename` parameter.
+
+##### `bridge_hostname` (required)
+The hostname of your Sigul Bridge that will relay requests for this client.
+
+##### `server_hostname` (required)
+The hostname of your Sigul Server that will process requests for this client.
+
+##### `ensure`
+Instance is to be `present` (default) or `absent`.
+
+##### `client_cert_nickname`
+This must be the nickname given to the Sigul Client's certificate within their NSS certificate database.  The named certificate is used to authenticate this Sigul Client to the Sigul Bridge.  The default is `sigul-client-cert`.
+
+##### `owner`
+User name or UID to own the configuration file.
+
+##### `group`
+Group name or GID to which the configuration file belongs.
+
+##### `mode`
+File mode for the configuration file.
+
+##### `filename`
+This may be used in place of `namevar` if it's beneficial to give namevar an arbitrary value.  This should specify the absolute filesystem path to the configuration file.
+
+##### `nss_password`
+Password for the client's NSS certificate database.  The default is to prompt the client at run-time for this password.
 
 
 ## Limitations
