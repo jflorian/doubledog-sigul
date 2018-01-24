@@ -1,18 +1,8 @@
-# modules/sigul/manifests/init.pp
 #
 # == Class: sigul
 #
 # Manages resources common to all usages of Sigul be it Client, Bridge or
 # Server.
-#
-# === Parameters
-#
-# ==== Required
-#
-# ==== Optional
-#
-# [*packages*]
-#   An array of package names needed for the Sigul installation.
 #
 # === Authors
 #
@@ -20,7 +10,7 @@
 #
 # === Copyright
 #
-# Copyright 2016-2017 John Florian
+# Copyright 2016-2018 John Florian
 
 
 class sigul (

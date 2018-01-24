@@ -32,10 +32,20 @@ This module lets you manage Sigul for its Bridge and Server as well as its Clien
 
 **Classes:**
 
+* [sigul](#sigul-class)
+
 **Defined types:**
 
 
 ### Classes
+
+#### sigul class
+
+This class manages resources common to all usages of Sigul be it Client, Bridge or
+Server.
+
+##### `packages`
+An array of package names needed for the Sigul installation.  The default should be correct for supported platforms.
 
 
 ### Defined types
