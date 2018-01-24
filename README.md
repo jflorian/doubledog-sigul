@@ -34,6 +34,7 @@ This module lets you manage Sigul for its Bridge and Server as well as its Clien
 
 * [sigul](#sigul-class)
 * [sigul::bridge](#sigulbridge-class)
+* [sigul::server](#sigulserver-class)
 
 **Defined types:**
 
@@ -91,6 +92,41 @@ Directory that is to contain the Koji integration files: configuration, certific
 
 ##### `service`
 The service name of the Sigul Bridge.
+
+
+#### sigul::server class
+
+This class manages a host as a Sigul Server.
+
+For security reasons the Sigul Server should be highly isolated and not accept incoming network connections.  Its sole mode of communication should be with the Sigul Bridge via connections that the Sigul Server itself establishes.
+
+##### `bridge_hostname` (required)
+The hostname of your Sigul Bridge that will relay requests to this Sigul Server.
+
+##### `gpg_kludge` (required)
+This must be set to `true` on hosts where gpg defaults to gpg2 until such time that Sigul can work acceptably with gpg2.  For more details, see:
+    https://bugzilla.redhat.com/show_bug.cgi?id=1329747
+
+##### `nss_password` (required)
+Password used to protect the NSS certificate database.
+
+##### `server_cert_nickname` (required)
+This must be the nickname given to the Sigul Server's certificate within the NSS certificate database.  The named certificate is used to authenticate the Sigul Server to the Sigul Bridge.
+
+##### `database_path`
+Filesystem path to the server's SQLite database.  Defaults to `/var/lib/sigul/server.sqlite`.
+
+##### `enable`
+Instance is to be started at boot.  Either `true` (default) or `false`.
+
+##### `ensure`
+Instance is to be `running` (default) or `stopped`.  Alternatively, a Boolean value may also be used with `true` equivalent to `running` and `false` equivalent to `stopped`.
+
+##### `gpg_kludge_packages`
+An array of package names needed for the kludging the Sigul installation to work around issues with GPGME.  This is only used if `gpg_kludge` is `true`.
+
+##### `service`
+The service name of the Sigul Server.
 
 
 ### Defined types
