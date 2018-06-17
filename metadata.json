@@ -4,7 +4,9 @@
     "author": "John Florian",
     "summary": "A module to manage Sigul servers, bridges and clients",
     "license": "GPL-3.0",
-    "source": "https://www.doubledog.org/git/puppet-sigul.git",
+    "source": "https://github.com/jflorian/doubledog-sigul",
+    "project_page": "https://github.com/jflorian/doubledog-sigul",
+    "issues_url": "https://github.com/jflorian/doubledog-sigul/issues",
     "operatingsystem_support": [{
         "operatingsystem": "CentOS",
         "operatingsystemmajrelease": "7"
