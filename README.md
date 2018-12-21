@@ -102,8 +102,11 @@ Instance is to be started at boot.  Either `true` (default) or `false`.
 ##### `ensure`
 Instance is to be `running` (default) or `stopped`.  Alternatively, a Boolean value may also be used with `true` equivalent to `running` and `false` equivalent to `stopped`.
 
+##### `home_dir`
+Home directory of the `sigul` user.  See `getent passwd sigul` on your Bridge.  Defaults to `/var/lib/sigul` to match packaging defaults of supported platform.
+
 ##### `koji_dir`
-Directory that is to contain the Koji integration files: configuration, certificates, keys, etc.  Defaults to `/var/lib/sigul/.koji`.
+Directory that is to contain the Koji integration files: configuration, certificates, keys, etc.  Defaults to *home_dir*`/.koji`.
 
 ##### `max_rpms_payload_size`
 Maximum accepted total size of all RPM payloads stored on disk for one request.  The default is `10737418240` (10 GiB).

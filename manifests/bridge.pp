@@ -20,6 +20,7 @@ class sigul::bridge (
         String[1]               $client_ca_cert,
         Integer[1,65535]        $client_listen_port,
         String[1]               $downloads,
+        String[1]               $home_dir,
         String[1]               $hub,
         String[1]               $hub_ca_cert,
         Integer                 $max_rpms_payload_size,
@@ -84,7 +85,7 @@ class sigul::bridge (
             content   => template('sigul/bridge.conf.erb'),
             show_diff => false,
             ;
-        $koji_dir:
+        [$home_dir, $koji_dir]:
             ensure => directory,
             mode   => '0750',
             ;
