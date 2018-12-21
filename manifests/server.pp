@@ -62,7 +62,7 @@ class sigul::server (
             subscribe => Package[$packages],
             ;
         '/etc/sigul/server.conf':
-            content   => template('sigul/server.conf'),
+            content   => template('sigul/server.conf.erb'),
             show_diff => false,
             ;
         $database_path:

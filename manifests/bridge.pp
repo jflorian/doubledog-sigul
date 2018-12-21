@@ -76,7 +76,7 @@ class sigul::bridge (
             ;
         '/etc/sigul/bridge.conf':
             owner     => 'root',
-            content   => template('sigul/bridge.conf'),
+            content   => template('sigul/bridge.conf.erb'),
             show_diff => false,
             ;
         $koji_dir:
@@ -84,7 +84,7 @@ class sigul::bridge (
             mode   => '0750',
             ;
         "${koji_dir}/config":
-            content => template('sigul/koji.conf'),
+            content => template('sigul/koji.conf.erb'),
             ;
     }
 
