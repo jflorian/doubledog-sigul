@@ -41,9 +41,9 @@ class sigul::server (
     if $gpg_kludge {
         package { $gpg_kludge_packages:
             ensure => installed,
-        } ->
+        }
 
-        file { '/usr/bin/gpg':
+        -> file { '/usr/bin/gpg':
             ensure => 'link',
             target => 'gpg1',
         }
@@ -70,15 +70,15 @@ class sigul::server (
             mode    => '0600',
             seltype => 'var_lib_t',
             ;
-    } ->
+    }
 
-    exec { 'sigul_server_create_db':
+    -> exec { 'sigul_server_create_db':
         creates => $database_path,
         require => Package[$packages],
         user    => 'sigul',
-    } ->
+    }
 
-    service { $service:
+    -> service { $service:
         ensure     => $ensure,
         enable     => $enable,
         hasrestart => true,
