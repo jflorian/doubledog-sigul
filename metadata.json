@@ -7,15 +7,25 @@
     "source": "https://github.com/jflorian/doubledog-sigul",
     "project_page": "https://github.com/jflorian/doubledog-sigul",
     "issues_url": "https://github.com/jflorian/doubledog-sigul/issues",
-    "operatingsystem_support": [{
-        "operatingsystem": "CentOS",
-        "operatingsystemmajrelease": "7"
-    }, {
-        "operatingsystem": "Fedora",
-        "operatingsystemrelease": ["25", "26", "27"]
-    }],
-    "dependencies": [{
-        "name": "doubledog/openssl",
-        "version_requirement": ">= 1.0.0 < 2.0.0"
-    }]
+    "operatingsystem_support": [
+        {
+            "operatingsystem": "CentOS",
+            "operatingsystemmajrelease": [
+                "7"
+            ]
+        },
+        {
+            "operatingsystem": "Fedora",
+            "operatingsystemrelease": [
+                "28",
+                "29"
+            ]
+        }
+    ],
+    "dependencies": [
+        {
+            "name": "doubledog/openssl",
+            "version_requirement": ">= 1.0.0 < 2.0.0"
+        }
+    ]
 }

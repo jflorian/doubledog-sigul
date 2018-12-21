@@ -10,16 +10,13 @@
 #
 # === Copyright
 #
+# This file is part of the doubledog-sigul Puppet module.
 # Copyright 2016-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 class sigul (
-        Array[String[1], 1]     $packages,
     ) {
-
-    package { $packages:
-        ensure => installed,
-    }
 
     # Sigul Server/Bridge log files go mute after log rotation
     #

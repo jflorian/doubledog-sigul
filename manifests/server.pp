@@ -14,7 +14,9 @@
 #
 # === Copyright
 #
+# This file is part of the doubledog-sigul Puppet module.
 # Copyright 2016-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 class sigul::server (
@@ -26,10 +28,15 @@ class sigul::server (
         Boolean                 $enable,
         Boolean                 $gpg_kludge,
         Array[String[1], 1]     $gpg_kludge_packages,
+        Array[String[1], 1]     $packages,
         String[1]               $service,
     ) {
 
     include '::sigul'
+
+    package { $packages:
+        ensure => installed,
+    }
 
     if $gpg_kludge {
         package { $gpg_kludge_packages:
@@ -52,7 +59,7 @@ class sigul::server (
             seltype   => 'etc_t',
             before    => Service[$service],
             notify    => Service[$service],
-            subscribe => Package[$::sigul::packages],
+            subscribe => Package[$packages],
             ;
         '/etc/sigul/server.conf':
             content   => template('sigul/server.conf'),
@@ -67,7 +74,7 @@ class sigul::server (
 
     exec { 'sigul_server_create_db':
         creates => $database_path,
-        require => Package[$::sigul::packages],
+        require => Package[$packages],
         user    => 'sigul',
     } ->
 
@@ -76,7 +83,7 @@ class sigul::server (
         enable     => $enable,
         hasrestart => true,
         hasstatus  => true,
-        subscribe  => Package[$::sigul::packages],
+        subscribe  => Package[$packages],
     }
 
 }

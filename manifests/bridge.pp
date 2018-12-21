@@ -10,7 +10,9 @@
 #
 # === Copyright
 #
+# This file is part of the doubledog-sigul Puppet module.
 # Copyright 2016-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 class sigul::bridge (
@@ -20,6 +22,7 @@ class sigul::bridge (
         String[1]               $hub,
         String[1]               $hub_ca_cert,
         String[1]               $nss_password,
+        Array[String[1], 1]     $packages,
         String[1]               $sigul_cert,
         String[1]               $top_dir,
         String[1]               $web,
@@ -30,6 +33,10 @@ class sigul::bridge (
     ) {
 
     include '::sigul'
+
+    package { $packages:
+        ensure => installed,
+    }
 
     # The CA certificates are correct to use openssl::tls_certificate instead
     # of openssl::tls_ca_certificate because they don't need to be general
@@ -65,7 +72,7 @@ class sigul::bridge (
             seltype   => 'etc_t',
             before    => Service[$service],
             notify    => Service[$service],
-            subscribe => Package[$::sigul::packages],
+            subscribe => Package[$packages],
             ;
         '/etc/sigul/bridge.conf':
             owner     => 'root',
@@ -101,7 +108,7 @@ class sigul::bridge (
         enable     => $enable,
         hasrestart => true,
         hasstatus  => true,
-        subscribe  => Package[$::sigul::packages],
+        subscribe  => Package[$packages],
     }
 
 }

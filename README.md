@@ -1,3 +1,9 @@
+<!--
+This file is part of the doubledog-sigul Puppet module.
+Copyright 2018 John Florian <jflorian@doubledog.org>
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 # sigul
 
 #### Table of Contents
@@ -48,9 +54,6 @@ This module lets you manage Sigul for its Bridge and Server as well as its Clien
 This class manages resources common to all usages of Sigul be it Client, Bridge or
 Server.
 
-##### `packages`
-An array of package names needed for the Sigul installation.  The default should be correct for supported platforms.
-
 
 #### sigul::bridge class
 
@@ -73,6 +76,9 @@ Puppet source URI providing the CA certificate which signed the Koji Hub certifi
 
 ##### `nss_password` (required)
 Password used to protect the NSS certificate database.
+
+##### `packages`
+An array of package names needed for the Sigul Bridge installation.  The default should be correct for supported platforms.
 
 ##### `sigul_cert` (required)
 Puppet source URI providing the Sigul Bridge's identity certificate which must be in PEM format.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
@@ -111,6 +117,9 @@ This must be set to `true` on hosts where gpg defaults to gpg2 until such time t
 
 ##### `nss_password` (required)
 Password used to protect the NSS certificate database.
+
+##### `packages`
+An array of package names needed for the Sigul Server installation.  The default should be correct for supported platforms.
 
 ##### `server_cert_nickname` (required)
 This must be the nickname given to the Sigul Server's certificate within the NSS certificate database.  The named certificate is used to authenticate the Sigul Server to the Sigul Bridge.
