@@ -4,6 +4,9 @@
 
 ---
 
+sigul::logrotate_kludge:            false
+
+
 sigul::bridge::enable:              true
 sigul::bridge::ensure:              running
 sigul::bridge::koji_dir:            /var/lib/sigul/.koji

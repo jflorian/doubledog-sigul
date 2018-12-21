@@ -4,6 +4,9 @@
 
 ---
 
+sigul::logrotate_kludge:            true
+
+
 sigul::bridge::packages:
     - sigul
 

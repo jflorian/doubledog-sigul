@@ -21,6 +21,7 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 
 ## [1.2.0] WIP
 ### Added
+- `sigul::logrotate_kludge` option to allow enabling/disabling the kludge handling that has been forced in prior versions.
 ### Changed
 - Fedora support to account for packaging split.
 ### Deprecated

@@ -54,6 +54,9 @@ This module lets you manage Sigul for its Bridge and Server as well as its Clien
 This class manages resources common to all usages of Sigul be it Client, Bridge or
 Server.
 
+##### `logrotate_kludge`
+If neither the Server nor Bridge reopen their log files after logrotate truncates them (and thus they stop receiving log messages), this option may be set to `true` to make logrotate use its `copytruncate` option as a means for working around the problem.  The default is `false`, except for platforms known to have issues.
+
 
 #### sigul::bridge class
 
