@@ -24,7 +24,7 @@ server-listen-port: <%= @server_listen_port %>
 ; fas-user-name:
 ; fas-password:
 # Maximum accepted total size of all RPM payloads stored on disk for one request
-; max-rpms-payload-size: 10737418240
+max-rpms-payload-size: <%= @max_rpms_payload_size %>
 
 [koji]
 # Config file used to connect to the Koji hub

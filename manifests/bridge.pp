@@ -22,6 +22,7 @@ class sigul::bridge (
         String[1]               $downloads,
         String[1]               $hub,
         String[1]               $hub_ca_cert,
+        Integer                 $max_rpms_payload_size,
         String[1]               $nss_password,
         Array[String[1], 1]     $packages,
         Integer[1,65535]        $server_listen_port,
