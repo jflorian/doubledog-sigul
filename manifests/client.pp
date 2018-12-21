@@ -25,6 +25,6 @@ class sigul::client (
         ensure => installed,
     }
 
-    create_resources(sigul::client_config, $configs)
+    create_resources(sigul::client::config, $configs)
 
 }

@@ -45,7 +45,7 @@ This module lets you manage Sigul for its Bridge and Server as well as its Clien
 
 **Defined types:**
 
-* [sigul::client\_config](#sigulclientconfig-defined-type)
+* [sigul::client::config](#sigulclientconfig-defined-type)
 
 
 ### Classes
@@ -111,7 +111,7 @@ The service name of the Sigul Bridge.
 This class manages a host as a Sigul Client to make request of the Sigul Server.
 
 ##### `configs`
-A hash whose keys are Client configuration resource names and whose values are hashes comprising the same parameters you would otherwise pass to the [sigul::client_config](#sigulclientconfig-defined-type) defined type.  The default is none.
+A hash whose keys are Client configuration resource names and whose values are hashes comprising the same parameters you would otherwise pass to the [sigul::client::config](#sigulclientconfig-defined-type) defined type.  The default is none.
 
 ##### `packages`
 An array of package names needed for the Sigul Client installation.  The default should be correct for supported platforms.
@@ -157,7 +157,7 @@ The service name of the Sigul Server.
 
 ### Defined types
 
-#### sigul::client\_config defined type
+#### sigul::client::config defined type
 
 This defined type manages a Sigul Client's configuration file.
 

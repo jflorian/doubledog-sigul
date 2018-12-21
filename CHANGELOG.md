@@ -19,12 +19,13 @@ Template
 
 All notable changes to this project (since v1.1.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## [1.2.0] WIP
+## [2.0.0] WIP
 ### Added
 - `sigul::logrotate_kludge` option to allow enabling/disabling the kludge handling that has been forced in prior versions.
 - `sigul::client` class to provision the Client only.
 ### Changed
 - Fedora support to account for packaging split.
+- `sigul::client_config` defined type has been renamed to `sigul::client::config`.
 ### Deprecated
 ### Removed
 ### Fixed

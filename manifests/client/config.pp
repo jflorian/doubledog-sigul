@@ -1,5 +1,5 @@
 #
-# == Define: sigul::client_config
+# == Define: sigul::client::config
 #
 # Manages a Sigul Client configuration file.
 #
@@ -9,10 +9,12 @@
 #
 # === Copyright
 #
+# This file is part of the doubledog-sigul Puppet module.
 # Copyright 2016-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
-define sigul::client_config (
+define sigul::client::config (
         String[1]               $bridge_hostname,
         String[1]               $server_hostname,
         Variant[Boolean, Enum['present', 'absent']] $ensure='present',
@@ -24,7 +26,7 @@ define sigul::client_config (
         String[1]               $owner='root',
     ) {
 
-    include '::sigul'
+    include '::sigul::client'
 
     file { $filename:
         ensure    => $ensure,
