@@ -26,6 +26,8 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 - `sigul::bridge::client_listen_port` parameter.
 - `sigul::bridge::server_listen_port` parameter.
 - `sigul::bridge::max_rpms_payload_size` parameter.
+- `sigul::bridge::nss_min_tls` parameter.
+- `sigul::bridge::nss_max_tls` parameter.
 ### Changed
 - Fedora support to account for packaging split.
 - `sigul::client_config` defined type has been renamed to `sigul::client::config`.

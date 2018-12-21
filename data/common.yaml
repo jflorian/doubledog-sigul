@@ -12,6 +12,8 @@ sigul::bridge::enable:                  true
 sigul::bridge::ensure:                  running
 sigul::bridge::koji_dir:                /var/lib/sigul/.koji
 sigul::bridge::max_rpms_payload_size:   10737418240
+sigul::bridge::nss_max_tls:             tls1.2
+sigul::bridge::nss_min_tls:             tls1.2
 sigul::bridge::server_listen_port:      44333
 sigul::bridge::service:                 sigul_bridge
 

@@ -108,6 +108,9 @@ Directory that is to contain the Koji integration files: configuration, certific
 ##### `max_rpms_payload_size`
 Maximum accepted total size of all RPM payloads stored on disk for one request.  The default is `10737418240` (10 GiB).
 
+##### `nss_min_tls`, `nss_max_tls`
+Minimum and maximum versions of TLS used.  The default is `tls1.2` for both.
+
 ##### `server_listen_port`
 TCP port number on which the Sigul Bridge expects Sigul Server connections.  The default is `44333`.
 
