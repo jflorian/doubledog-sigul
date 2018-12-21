@@ -93,6 +93,9 @@ URL of your Koji Web service.
 ##### `top_dir` (required)
 Directory containing Koji's `repos/` directory.
 
+##### `client_listen_port`
+TCP port number on which the Sigul Bridge expects Sigul Client connections.  The default is `44334`.
+
 ##### `enable`
 Instance is to be started at boot.  Either `true` (default) or `false`.
 

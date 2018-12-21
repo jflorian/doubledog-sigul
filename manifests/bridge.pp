@@ -18,6 +18,7 @@
 class sigul::bridge (
         String[1]               $bridge_cert_nickname,
         String[1]               $client_ca_cert,
+        Integer[1,65535]        $client_listen_port,
         String[1]               $downloads,
         String[1]               $hub,
         String[1]               $hub_ca_cert,

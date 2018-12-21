@@ -23,6 +23,7 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 ### Added
 - `sigul::logrotate_kludge` option to allow enabling/disabling the kludge handling that has been forced in prior versions.
 - `sigul::client` class to provision the Client only.
+- `sigul::bridge::client_listen_port` parameter.
 ### Changed
 - Fedora support to account for packaging split.
 - `sigul::client_config` defined type has been renamed to `sigul::client::config`.

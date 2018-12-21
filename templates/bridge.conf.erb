@@ -13,7 +13,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 # Nickname of the bridge's certificate in the NSS database specified below
 bridge-cert-nickname: <%= @bridge_cert_nickname %>
 # Port on which the bridge expects client connections
-; client-listen-port: 44334
+client-listen-port: <%= @client_listen_port %>
 # Port on which the bridge expects server connections
 ; server-listen-port: 44333
 # A Fedora account system group required for access to the signing server.  If
