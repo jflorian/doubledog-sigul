@@ -40,6 +40,7 @@ This module lets you manage Sigul for its Bridge and Server as well as its Clien
 
 * [sigul](#sigul-class)
 * [sigul::bridge](#sigulbridge-class)
+* [sigul::client](#sigulclient-class)
 * [sigul::server](#sigulserver-class)
 
 **Defined types:**
@@ -103,6 +104,17 @@ Directory that is to contain the Koji integration files: configuration, certific
 
 ##### `service`
 The service name of the Sigul Bridge.
+
+
+#### sigul::client class
+
+This class manages a host as a Sigul Client to make request of the Sigul Server.
+
+##### `configs`
+A hash whose keys are Client configuration resource names and whose values are hashes comprising the same parameters you would otherwise pass to the [sigul::client_config](#sigulclientconfig-defined-type) defined type.  The default is none.
+
+##### `packages`
+An array of package names needed for the Sigul Client installation.  The default should be correct for supported platforms.
 
 
 #### sigul::server class

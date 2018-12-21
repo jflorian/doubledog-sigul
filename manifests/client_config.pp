@@ -34,7 +34,7 @@ define sigul::client_config (
         seluser   => 'system_u',
         selrole   => 'object_r',
         seltype   => 'etc_t',
-        subscribe => Package[$::sigul::packages],
+        subscribe => Package[$::sigul::client::packages],
         content   => template('sigul/client.conf'),
         show_diff => false,
     }

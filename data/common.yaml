@@ -13,6 +13,11 @@ sigul::bridge::koji_dir:            /var/lib/sigul/.koji
 sigul::bridge::service:             sigul_bridge
 
 
+sigul::client::configs:             {}
+sigul::client::packages:
+    - sigul
+
+
 sigul::server::database_path:       /var/lib/sigul/server.sqlite
 sigul::server::enable:              true
 sigul::server::ensure:              running
