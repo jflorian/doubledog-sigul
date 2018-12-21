@@ -24,6 +24,7 @@ class sigul::bridge (
         String[1]               $hub_ca_cert,
         String[1]               $nss_password,
         Array[String[1], 1]     $packages,
+        Integer[1,65535]        $server_listen_port,
         String[1]               $sigul_cert,
         String[1]               $top_dir,
         String[1]               $web,

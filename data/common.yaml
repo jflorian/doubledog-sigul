@@ -11,6 +11,7 @@ sigul::bridge::client_listen_port:  44334
 sigul::bridge::enable:              true
 sigul::bridge::ensure:              running
 sigul::bridge::koji_dir:            /var/lib/sigul/.koji
+sigul::bridge::server_listen_port:  44333
 sigul::bridge::service:             sigul_bridge
 
 

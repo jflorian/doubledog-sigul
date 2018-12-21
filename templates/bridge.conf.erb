@@ -15,7 +15,7 @@ bridge-cert-nickname: <%= @bridge_cert_nickname %>
 # Port on which the bridge expects client connections
 client-listen-port: <%= @client_listen_port %>
 # Port on which the bridge expects server connections
-; server-listen-port: 44333
+server-listen-port: <%= @server_listen_port %>
 # A Fedora account system group required for access to the signing server.  If
 # empty, no Fedora account check is done.
 ; required-fas-group:
