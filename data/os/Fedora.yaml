@@ -6,6 +6,7 @@
 
 sigul::bridge::packages:
     - sigul-bridge
+    - python2-koji
 
 
 sigul::server::packages:
