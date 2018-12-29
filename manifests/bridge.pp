@@ -17,19 +17,19 @@
 
 class sigul::bridge (
         String[1]               $bridge_cert_nickname,
-        String[1]               $client_ca_cert,
+        String[1]               $client_ca_cert_source,
+        String[1]               $client_cert_source,
         Integer[1,65535]        $client_listen_port,
         String[1]               $downloads,
         String[1]               $home_dir,
         String[1]               $hub,
-        String[1]               $hub_ca_cert,
+        String[1]               $hub_ca_cert_source,
         Integer                 $max_rpms_payload_size,
         String[1]               $nss_max_tls,
         String[1]               $nss_min_tls,
         String[1]               $nss_password,
         Array[String[1], 1]     $packages,
         Integer[1,65535]        $server_listen_port,
-        String[1]               $sigul_cert,
         String[1]               $top_dir,
         String[1]               $web,
         Variant[Boolean, Enum['running', 'stopped']] $ensure,
@@ -51,19 +51,19 @@ class sigul::bridge (
         'sigul-client-ca-chain':
             cert_name   => 'client-ca-chain',
             cert_path   => $koji_dir,
-            cert_source => $client_ca_cert,
+            cert_source => $client_ca_cert_source,
             notify      => Service[$service],
             ;
         'sigul-hub-ca-chain':
             cert_name   => 'hub-ca-chain',
             cert_path   => $koji_dir,
-            cert_source => $hub_ca_cert,
+            cert_source => $hub_ca_cert_source,
             notify      => Service[$service],
             ;
         'sigul':
             cert_name   => 'sigul',
             cert_path   => $koji_dir,
-            cert_source => $sigul_cert,
+            cert_source => $client_cert_source,
             notify      => Service[$service],
             ;
     }

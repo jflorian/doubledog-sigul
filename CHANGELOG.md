@@ -32,6 +32,10 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 ### Changed
 - Fedora support to account for packaging split.
 - `sigul::client_config` defined type has been renamed to `sigul::client::config`.
+- TLS certificate source URI parameters have been renamed:
+    - `sigul::bridge::client_ca_cert` is now `sigul::bridge::client_ca_cert_source`
+    - `sigul::bridge::hub_ca_cert` is now `sigul::bridge::hub_ca_cert_source`
+    - `sigul::bridge::sigul_cert` is now `sigul::bridge::client_cert_source`
 ### Deprecated
 ### Removed
 ### Fixed

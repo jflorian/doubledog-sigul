@@ -66,8 +66,8 @@ This class manages a host as a Sigul Bridge to relay requests between Sigul Clie
 ##### `bridge_cert_nickname` (required)
 This must be the nickname given to the Sigul Bridge's certificate within the NSS certificate database.  The named certificate is used to authenticate the Sigul Bridge to the Sigul Server.
 
-##### `client_ca_cert` (required)
-Puppet source URI providing the CA certificate which signed *sigul_cert*.  This must be in PEM format and include all intermediate CA certificates, sorted and concatenated from the leaf CA to the root CA.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
+##### `client_ca_cert_source` (required)
+Puppet source URI providing the CA certificate which signed *client_cert_source*.  This must be in PEM format and include all intermediate CA certificates, sorted and concatenated from the leaf CA to the root CA.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
 
 ##### `downloads` (required)
 URL of your Koji package download site.
@@ -75,17 +75,17 @@ URL of your Koji package download site.
 ##### `hub` (required)
 URL of your Koji Hub service.
 
-##### `hub_ca_cert` (required)
+##### `hub_ca_cert_source` (required)
 Puppet source URI providing the CA certificate which signed the Koji Hub certificate.  This must be in PEM format and include all intermediate CA certificates, sorted and concatenated from the leaf CA to the root CA.
+
+##### `client_cert_source` (required)
+Puppet source URI providing the Sigul Bridge's identity certificate which must be in PEM format.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
 
 ##### `nss_password` (required)
 Password used to protect the NSS certificate database.
 
 ##### `packages`
 An array of package names needed for the Sigul Bridge installation.  The default should be correct for supported platforms.
-
-##### `sigul_cert` (required)
-Puppet source URI providing the Sigul Bridge's identity certificate which must be in PEM format.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
 
 ##### `web` (required)
 URL of your Koji Web service.
