@@ -7,10 +7,16 @@
 sigul::logrotate_kludge:            false
 
 
+sigul::bridge::client_ca_cert_content:  null
+sigul::bridge::client_ca_cert_source:   null
+sigul::bridge::client_cert_content:     null
+sigul::bridge::client_cert_source:      null
 sigul::bridge::client_listen_port:      44334
 sigul::bridge::enable:                  true
 sigul::bridge::ensure:                  running
 sigul::bridge::home_dir:                /var/lib/sigul
+sigul::bridge::hub_ca_cert_content:     null
+sigul::bridge::hub_ca_cert_source:      null
 sigul::bridge::koji_dir:                "%{lookup('sigul::bridge::home_dir')}/.koji"
 sigul::bridge::max_rpms_payload_size:   10737418240
 sigul::bridge::nss_max_tls:             tls1.2

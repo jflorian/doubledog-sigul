@@ -66,20 +66,11 @@ This class manages a host as a Sigul Bridge to relay requests between Sigul Clie
 ##### `bridge_cert_nickname` (required)
 This must be the nickname given to the Sigul Bridge's certificate within the NSS certificate database.  The named certificate is used to authenticate the Sigul Bridge to the Sigul Server.
 
-##### `client_ca_cert_source` (required)
-Puppet source URI providing the CA certificate which signed *client_cert_source*.  This must be in PEM format and include all intermediate CA certificates, sorted and concatenated from the leaf CA to the root CA.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
-
 ##### `downloads` (required)
 URL of your Koji package download site.
 
 ##### `hub` (required)
 URL of your Koji Hub service.
-
-##### `hub_ca_cert_source` (required)
-Puppet source URI providing the CA certificate which signed the Koji Hub certificate.  This must be in PEM format and include all intermediate CA certificates, sorted and concatenated from the leaf CA to the root CA.
-
-##### `client_cert_source` (required)
-Puppet source URI providing the Sigul Bridge's identity certificate which must be in PEM format.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
 
 ##### `nss_password` (required)
 Password used to protect the NSS certificate database.
@@ -92,6 +83,15 @@ URL of your Koji Web service.
 
 ##### `top_dir` (required)
 Directory containing Koji's `repos/` directory.
+
+##### `client_ca_cert_content`, `client_ca_cert_source`
+Literal string or Puppet source URI providing the CA certificate which signed the certificated provided by *client_cert_content* or *client_cert_source*.  This must be in PEM format and include all intermediate CA certificates, sorted and concatenated from the leaf CA to the root CA.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
+
+##### `hub_ca_cert_content`, `hub_ca_cert_source`
+Literal string or Puppet source URI providing the CA certificate which signed the Koji Hub certificate.  This must be in PEM format and include all intermediate CA certificates, sorted and concatenated from the leaf CA to the root CA.
+
+##### `client_cert_content`, `client_cert_source`
+Literal string or Puppet source URI providing the Sigul Bridge's identity certificate which must be in PEM format.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
 
 ##### `client_listen_port`
 TCP port number on which the Sigul Bridge expects Sigul Client connections.  The default is `44334`.
