@@ -67,7 +67,7 @@ This class manages a host as a Sigul Bridge to relay requests between Sigul Clie
 This must be the nickname given to the Sigul Bridge's certificate within the NSS certificate database.  The named certificate is used to authenticate the Sigul Bridge to the Sigul Server.
 
 ##### `client_ca_cert` (required)
-Puppet source URI providing the CA certificate which signed `sigul_cert`.  This must be in PEM format and include all intermediate CA certificates, sorted and concatenated from the leaf CA to the root CA.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
+Puppet source URI providing the CA certificate which signed *sigul_cert*.  This must be in PEM format and include all intermediate CA certificates, sorted and concatenated from the leaf CA to the root CA.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
 
 ##### `downloads` (required)
 URL of your Koji package download site.
@@ -100,19 +100,19 @@ TCP port number on which the Sigul Bridge expects Sigul Client connections.  The
 Instance is to be started at boot.  Either `true` (default) or `false`.
 
 ##### `ensure`
-Instance is to be `running` (default) or `stopped`.  Alternatively, a Boolean value may also be used with `true` equivalent to `running` and `false` equivalent to `stopped`.
+Instance is to be `'running'` (default) or `'stopped'`.  Alternatively, a Boolean value may also be used with `true` equivalent to `'running'` and `false` equivalent to `'stopped'`.
 
 ##### `home_dir`
-Home directory of the `sigul` user.  See `getent passwd sigul` on your Bridge.  Defaults to `/var/lib/sigul` to match packaging defaults of supported platform.
+Home directory of the `sigul` user.  See `getent passwd sigul` on your Bridge.  Defaults to `'/var/lib/sigul'` to match packaging defaults of supported platform.
 
 ##### `koji_dir`
-Directory that is to contain the Koji integration files: configuration, certificates, keys, etc.  Defaults to *home_dir*`/.koji`.
+Directory that is to contain the Koji integration files: configuration, certificates, keys, etc.  Defaults to `'`*home_dir*`/.koji'`.
 
 ##### `max_rpms_payload_size`
 Maximum accepted total size of all RPM payloads stored on disk for one request.  The default is `10737418240` (10 GiB).
 
 ##### `nss_min_tls`, `nss_max_tls`
-Minimum and maximum versions of TLS used.  The default is `tls1.2` for both.
+Minimum and maximum versions of TLS used.  The default is `'tls1.2'` for both.
 
 ##### `server_listen_port`
 TCP port number on which the Sigul Bridge expects Sigul Server connections.  The default is `44333`.
@@ -155,16 +155,16 @@ An array of package names needed for the Sigul Server installation.  The default
 This must be the nickname given to the Sigul Server's certificate within the NSS certificate database.  The named certificate is used to authenticate the Sigul Server to the Sigul Bridge.
 
 ##### `database_path`
-Filesystem path to the server's SQLite database.  Defaults to `/var/lib/sigul/server.sqlite`.
+Filesystem path to the server's SQLite database.  Defaults to `'/var/lib/sigul/server.sqlite'`.
 
 ##### `enable`
 Instance is to be started at boot.  Either `true` (default) or `false`.
 
 ##### `ensure`
-Instance is to be `running` (default) or `stopped`.  Alternatively, a Boolean value may also be used with `true` equivalent to `running` and `false` equivalent to `stopped`.
+Instance is to be `'running'` (default) or `'stopped'`.  Alternatively, a Boolean value may also be used with `true` equivalent to `'running'` and `false` equivalent to `'stopped'`.
 
 ##### `gpg_kludge_packages`
-An array of package names needed for the kludging the Sigul installation to work around issues with GPGME.  This is only used if `gpg_kludge` is `true`.
+An array of package names needed for the kludging the Sigul installation to work around issues with GPGME.  This is only used if *gpg_kludge* is `true`.
 
 ##### `service`
 The service name of the Sigul Server.
@@ -177,7 +177,7 @@ The service name of the Sigul Server.
 This defined type manages a Sigul Client's configuration file.
 
 ##### `namevar` (required)
-An arbitrary identifier for the client configuration instance unless the `filename` parameter is not set in which case this must provide the value normally set with the `filename` parameter.
+An arbitrary identifier for the client configuration instance unless the *filename* parameter is not set in which case this must provide the value normally set with the *filename* parameter.
 
 ##### `bridge_hostname` (required)
 The hostname of your Sigul Bridge that will relay requests for this client.
@@ -186,10 +186,10 @@ The hostname of your Sigul Bridge that will relay requests for this client.
 The hostname of your Sigul Server that will process requests for this client.
 
 ##### `ensure`
-Instance is to be `present` (default) or `absent`.
+Instance is to be `'present'` (default) or `'absent'`.
 
 ##### `client_cert_nickname`
-This must be the nickname given to the Sigul Client's certificate within their NSS certificate database.  The named certificate is used to authenticate this Sigul Client to the Sigul Bridge.  The default is `sigul-client-cert`.
+This must be the nickname given to the Sigul Client's certificate within their NSS certificate database.  The named certificate is used to authenticate this Sigul Client to the Sigul Bridge.  The default is `'sigul-client-cert'`.
 
 ##### `owner`
 User name or UID to own the configuration file.
@@ -201,7 +201,7 @@ Group name or GID to which the configuration file belongs.
 File mode for the configuration file.
 
 ##### `filename`
-This may be used in place of `namevar` if it's beneficial to give namevar an arbitrary value.  This should specify the absolute filesystem path to the configuration file.
+This may be used in place of *namevar* if it's beneficial to give namevar an arbitrary value.  This should specify the absolute filesystem path to the configuration file.
 
 ##### `nss_password`
 Password for the client's NSS certificate database.  The default is to prompt the client at run-time for this password.
