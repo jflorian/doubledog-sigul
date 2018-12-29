@@ -29,17 +29,19 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 - `sigul::bridge::nss_min_tls` parameter.
 - `sigul::bridge::nss_max_tls` parameter.
 - `sigul::bridge::home_dir` parameter.
-- TLS certificate content parameters:
-    - `sigul::bridge::client_ca_cert_content`
-    - `sigul::bridge::client_cert_content`
-    - `sigul::bridge::hub_ca_cert_content`
+- `sigul::bridge::x509` class to provision the X.509 certificates.  See more details in the *Changed* section below.
 ### Changed
 - Fedora support to account for packaging split.
 - `sigul::client_config` defined type has been renamed to `sigul::client::config`.
-- TLS certificate source URI parameters have been renamed:
-    - `sigul::bridge::client_ca_cert` is now `sigul::bridge::client_ca_cert_source`
-    - `sigul::bridge::hub_ca_cert` is now `sigul::bridge::hub_ca_cert_source`
-    - `sigul::bridge::sigul_cert` is now `sigul::bridge::client_cert_source`
+- TLS X.509 certificate management is now optional.  If desired, `include sigul::bridge::x509`.
+    - Several related parameters have moved from `sigul::bridge` to `sigul::bridge::x509` and have been renamed:
+        - `client_ca_cert` is now `client_ca_cert_source`
+        - `hub_ca_cert` is now `hub_ca_cert_source`
+        - `sigul_cert` is now `client_cert_source`
+    - The following are simply new:
+        - `client_ca_cert_content`
+        - `client_cert_content`
+        - `hub_ca_cert_content`
 ### Deprecated
 ### Removed
 ### Fixed

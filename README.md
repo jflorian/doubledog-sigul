@@ -30,10 +30,15 @@ This module lets you manage Sigul for its Bridge and Server as well as its Clien
 
 ### Setup Requirements
 
-This module integrates and thus depends on several other Puppet modules to achieve a reliable solution.  At present these are:
+This module integrates and thus depends on several other Puppet modules to achieve a reliable solution.  At present this is:
+
+* [puppetlabs-firewall](https://github.com/puppetlabs/puppetlabs-firewall)
+
+The following is optional (despite being listed as a requirement in the `metadata.json` file), unless you wish to use any the integrated `sigul::bridge::x509` class.  If you don't use this, you will either need to manage the X.509 certificates separately (or help with the Kerberos support, below).
 
 * [doubledog-openssl](https://github.com/jflorian/doubledog-openssl)
-* [puppetlabs-firewall](https://github.com/puppetlabs/puppetlabs-firewall)
+
+In the future, I intend to do more such disintegration and implement Kerberos support but, alas I only have so much time.  (Hint: PRs welcome!)
 
 ### Beginning with sigul
 
@@ -45,6 +50,7 @@ This module integrates and thus depends on several other Puppet modules to achie
 
 * [sigul](#sigul-class)
 * [sigul::bridge](#sigulbridge-class)
+* [sigul::bridge::x509](#sigulbridgex509-class)
 * [sigul::client](#sigulclient-class)
 * [sigul::server](#sigulserver-class)
 
@@ -89,15 +95,6 @@ URL of your Koji Web service.
 ##### `top_dir` (required)
 Directory containing Koji's `repos/` directory.
 
-##### `client_ca_cert_content`, `client_ca_cert_source`
-Literal string or Puppet source URI providing the CA certificate which signed the certificated provided by *client_cert_content* or *client_cert_source*.  This must be in PEM format and include all intermediate CA certificates, sorted and concatenated from the leaf CA to the root CA.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
-
-##### `hub_ca_cert_content`, `hub_ca_cert_source`
-Literal string or Puppet source URI providing the CA certificate which signed the Koji Hub certificate.  This must be in PEM format and include all intermediate CA certificates, sorted and concatenated from the leaf CA to the root CA.
-
-##### `client_cert_content`, `client_cert_source`
-Literal string or Puppet source URI providing the Sigul Bridge's identity certificate which must be in PEM format.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
-
 ##### `client_listen_port`
 TCP port number on which the Sigul Bridge expects Sigul Client connections.  The default is `44334`.
 
@@ -124,6 +121,21 @@ TCP port number on which the Sigul Bridge expects Sigul Server connections.  The
 
 ##### `service`
 The service name of the Sigul Bridge.
+
+
+#### sigul::bridge::x509 class
+
+This class manages the X.509 certificates on a host acting as a Sigul Bridge that uses PKI to authenticate itself to a Koji Hub.  It's use is optional and should only be included if you wish to use the integrated X.509 support offered by the
+[doubledog-openssl](https://github.com/jflorian/doubledog-openssl) module.
+
+##### `client_ca_cert_content`, `client_ca_cert_source`
+Literal string or Puppet source URI providing the CA certificate which signed the certificated provided by *client_cert_content* or *client_cert_source*.  This must be in PEM format and include all intermediate CA certificates, sorted and concatenated from the leaf CA to the root CA.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
+
+##### `hub_ca_cert_content`, `hub_ca_cert_source`
+Literal string or Puppet source URI providing the CA certificate which signed the Koji Hub certificate.  This must be in PEM format and include all intermediate CA certificates, sorted and concatenated from the leaf CA to the root CA.
+
+##### `client_cert_content`, `client_cert_source`
+Literal string or Puppet source URI providing the Sigul Bridge's identity certificate which must be in PEM format.  This certificate is used to authenticate the Sigul Bridge to the Koji Hub.
 
 
 #### sigul::client class
