@@ -45,6 +45,7 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 ### Fixed
 - Fedora support requires `python2-koji` package on the Bridge.
 - Several readability issues with the `README.md` and its formatting.
+- Missing dependency on `puppetlabs-firewall` in `metadata.json`.
 ### Security
 
 ## [1.1.0 and prior] 2018-12-15

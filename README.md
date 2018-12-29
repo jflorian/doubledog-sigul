@@ -30,6 +30,11 @@ This module lets you manage Sigul for its Bridge and Server as well as its Clien
 
 ### Setup Requirements
 
+This module integrates and thus depends on several other Puppet modules to achieve a reliable solution.  At present these are:
+
+* [doubledog-openssl](https://github.com/jflorian/doubledog-openssl)
+* [puppetlabs-firewall](https://github.com/puppetlabs/puppetlabs-firewall)
+
 ### Beginning with sigul
 
 ## Usage
