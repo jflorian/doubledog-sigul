@@ -30,15 +30,12 @@ This module lets you manage Sigul for its Bridge and Server as well as its Clien
 
 ### Setup Requirements
 
-This module integrates and thus depends on several other Puppet modules to achieve a reliable solution.  At present this is:
-
-* [puppetlabs-firewall](https://github.com/puppetlabs/puppetlabs-firewall)
-
-The following is optional (despite being listed as a requirement in the `metadata.json` file), unless you wish to use any the integrated `sigul::bridge::x509` class.  If you don't use this, you will either need to manage the X.509 certificates separately (or help with the Kerberos support, below).
+This module optionally depends on and leverages several other Puppet modules to achieve a reliable, integrated solution.  At present these are:
 
 * [doubledog-openssl](https://github.com/jflorian/doubledog-openssl)
-
-In the future, I intend to do more such disintegration and implement Kerberos support but, alas I only have so much time.  (Hint: PRs welcome!)
+** Only required when using the `sigul::bridge::x509` class
+* [puppetlabs-firewall](https://github.com/puppetlabs/puppetlabs-firewall)
+** Only required when using the `sigul::bridge::firewall` class
 
 ### Beginning with sigul
 
@@ -50,6 +47,7 @@ In the future, I intend to do more such disintegration and implement Kerberos su
 
 * [sigul](#sigul-class)
 * [sigul::bridge](#sigulbridge-class)
+* [sigul::bridge::firewall](#sigulbridgefirewall-class)
 * [sigul::bridge::x509](#sigulbridgex509-class)
 * [sigul::client](#sigulclient-class)
 * [sigul::server](#sigulserver-class)
@@ -121,6 +119,11 @@ TCP port number on which the Sigul Bridge expects Sigul Server connections.  The
 
 ##### `service`
 The service name of the Sigul Bridge.
+
+
+#### sigul::bridge::firewall class
+
+This class manages iptables on a host acting as a Sigul Bridge so far as the needs of Sigul itself are concerned.  It's use is optional and should only be included if you wish to use the integrated firewall support offered by the [puppetlabs-firewall](https://github.com/puppetlabs/puppetlabs-firewall) module.
 
 
 #### sigul::bridge::x509 class

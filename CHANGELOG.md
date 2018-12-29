@@ -30,6 +30,7 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 - `sigul::bridge::nss_max_tls` parameter.
 - `sigul::bridge::home_dir` parameter.
 - `sigul::bridge::x509` class to provision the X.509 certificates.  See more details in the *Changed* section below.
+- `sigul::bridge::firewall` class to manage iptables.  See more details in the *Changed* section below.
 ### Changed
 - Fedora support to account for packaging split.
 - `sigul::client_config` defined type has been renamed to `sigul::client::config`.
@@ -42,6 +43,7 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
         - `client_ca_cert_content`
         - `client_cert_content`
         - `hub_ca_cert_content`
+- iptables firewall management is now optional.  If desired, `include sigul::bridge::firewall`.
 ### Deprecated
 ### Removed
 ### Fixed

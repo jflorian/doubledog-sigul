@@ -67,21 +67,6 @@ class sigul::bridge (
             ;
     }
 
-    firewall {
-        '500 accept Sigul client packets':
-            dport  => '44334',
-            proto  => 'tcp',
-            state  => 'NEW',
-            action => 'accept',
-            ;
-        '500 accept Sigul server packets':
-            dport  => '44333',
-            proto  => 'tcp',
-            state  => 'NEW',
-            action => 'accept',
-            ;
-    }
-
     service { $service:
         ensure     => $ensure,
         enable     => $enable,
