@@ -231,8 +231,6 @@ Password for the client's NSS certificate database.  The default is to prompt th
 
 Tested on modern Fedora and CentOS releases, but likely to work on any Red Hat variant.  Adaptations for other operating systems should be trivial as this module follows the data-in-module paradigm.  See `data/common.yaml` for the most likely obstructions.  If "one size can't fit all", the value should be moved from `data/common.yaml` to `data/os/%{facts.os.name}.yaml` instead.  See `hiera.yaml` for how this is handled.
 
-This should be compatible with Puppet 3.x and is being used with Puppet 4.x as well.
-
 ## Development
 
 Contributions are welcome via pull requests.  All code should generally be compliant with puppet-lint.
