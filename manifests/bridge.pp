@@ -11,7 +11,7 @@
 # === Copyright
 #
 # This file is part of the doubledog-sigul Puppet module.
-# Copyright 2016-2018 John Florian
+# Copyright 2016-2019 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
@@ -35,7 +35,7 @@ class sigul::bridge (
         String[1]               $service,
     ) {
 
-    include '::sigul'
+    include 'sigul'
 
     package { $packages:
         ensure => installed,

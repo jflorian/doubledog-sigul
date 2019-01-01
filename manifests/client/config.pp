@@ -10,7 +10,7 @@
 # === Copyright
 #
 # This file is part of the doubledog-sigul Puppet module.
-# Copyright 2016-2018 John Florian
+# Copyright 2016-2019 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
@@ -26,7 +26,7 @@ define sigul::client::config (
         String[1]               $owner='root',
     ) {
 
-    include '::sigul::client'
+    include 'sigul::client'
 
     file { $filename:
         ensure    => $ensure,
@@ -36,7 +36,7 @@ define sigul::client::config (
         seluser   => 'system_u',
         selrole   => 'object_r',
         seltype   => 'etc_t',
-        subscribe => Package[$::sigul::client::packages],
+        subscribe => Package[$sigul::client::packages],
         content   => template('sigul/client.conf.erb'),
         show_diff => false,
     }

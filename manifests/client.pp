@@ -10,7 +10,7 @@
 # === Copyright
 #
 # This file is part of the doubledog-sigul Puppet module.
-# Copyright 2018 John Florian
+# Copyright 2018-2019 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
@@ -19,7 +19,7 @@ class sigul::client (
         Array[String[1], 1]     $packages,
     ) {
 
-    include '::sigul'
+    include 'sigul'
 
     package { $packages:
         ensure => installed,
