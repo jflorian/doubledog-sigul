@@ -19,7 +19,7 @@ Template
 
 All notable changes to this project (since v1.1.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## [2.0.0] WIP
+## [2.0.0] 2019-01-16
 ### Added
 - `sigul::logrotate_kludge` option to allow enabling/disabling the kludge handling that has been forced in prior versions.
 - `sigul::client` class to provision the Client only.
@@ -46,13 +46,10 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 - iptables firewall management is now:
     - optional.  If desired, `include sigul::bridge::firewall`.
     - If used, connection tracking is no longer used for the Bridge accepting Server connections rule to avoid hung communications due to long inactivity periods that caused the state tracking to be evicted by the kernel.
-### Deprecated
-### Removed
 ### Fixed
 - Fedora support requires `python2-koji` package on the Bridge.
 - Several readability issues with the `README.md` and its formatting.
 - Missing dependency on `puppetlabs-firewall` in `metadata.json`.
-### Security
 
 ## [1.1.0 and prior] 2018-12-15
 
