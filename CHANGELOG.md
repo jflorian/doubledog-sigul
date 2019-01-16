@@ -1,6 +1,6 @@
 <!--
 # This file is part of the doubledog-sigul Puppet module.
-# Copyright 2018 John Florian
+# Copyright 2018-2019 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 Template
@@ -43,7 +43,9 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
         - `client_ca_cert_content`
         - `client_cert_content`
         - `hub_ca_cert_content`
-- iptables firewall management is now optional.  If desired, `include sigul::bridge::firewall`.
+- iptables firewall management is now:
+    - optional.  If desired, `include sigul::bridge::firewall`.
+    - If used, connection tracking is no longer used for the Bridge accepting Server connections rule to avoid hung communications due to long inactivity periods that caused the state tracking to be evicted by the kernel.
 ### Deprecated
 ### Removed
 ### Fixed
