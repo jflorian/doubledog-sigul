@@ -23,7 +23,6 @@ class sigul::bridge::firewall (
         '500 accept Sigul client packets':
             dport  => $sigul::bridge::client_listen_port,
             proto  => 'tcp',
-            state  => 'NEW',
             action => 'accept',
             ;
         '500 accept Sigul server packets':

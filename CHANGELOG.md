@@ -19,6 +19,10 @@ Template
 
 All notable changes to this project (since v1.1.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [2.0.1] 2019-02-13
+### Fixed
+- `sigul::bridge::firewall` still used connection tracking for Client connections.  Evidence suggest that the Server may also act as a Client under one of these long term connections.
+
 ## [2.0.0] 2019-01-16
 ### Added
 - `sigul::logrotate_kludge` option to allow enabling/disabling the kludge handling that has been forced in prior versions.
