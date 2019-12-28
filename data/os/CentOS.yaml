@@ -1,7 +1,0 @@
-# This file is part of the doubledog-sigul Puppet module.
-# Copyright 2018-2019 John Florian
-# SPDX-License-Identifier: GPL-3.0-or-later
-
----
-
-sigul::logrotate_kludge:            true
