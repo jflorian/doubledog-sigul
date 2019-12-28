@@ -1,6 +1,6 @@
 {
     "name": "doubledog-sigul",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "author": "John Florian",
     "summary": "A module to manage Sigul servers, bridges and clients",
     "license": "GPL-3.0",
@@ -18,9 +18,9 @@
         {
             "operatingsystem": "Fedora",
             "operatingsystemrelease": [
-                "28",
                 "29",
-                "30"
+                "30",
+                "31"
             ]
         }
     ],
