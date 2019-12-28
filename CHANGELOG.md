@@ -21,11 +21,13 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 
 ## [2.2.0] WIP
 ### Added
+- Fedora 31 support
 ### Changed
 - expect CentOS packaging to provide sigul-0.207 or newer
 ### Deprecated
 ### Removed
 - special Fedora support requiring `python2-koji` package on the Bridge (rpm deps are again responsible)
+- Fedora 28 support
 ### Fixed
 ### Security
 
