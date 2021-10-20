@@ -22,11 +22,13 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 ## [3.0.0] WIP
 ### Added
 ### Changed
+- `sigul::server::packages` now includes `python3-cryptography`
 ### Deprecated
 ### Removed
 - kludge support where gpg1 was required for older Sigul builds
 - `sigul::server::gpg_kludge` and `sigul::server::gpg_kludge_packages` parameters
 ### Fixed
+- CentOS 8 support for `sigul::bridge` and `sigul::server`
 ### Security
 
 ## [2.2.0] 2019-12-28

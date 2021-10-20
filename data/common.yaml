@@ -38,5 +38,6 @@ sigul::server::database_path:       /var/lib/sigul/server.sqlite
 sigul::server::enable:              true
 sigul::server::ensure:              running
 sigul::server::packages:
+    - python3-cryptography
     - sigul-server
 sigul::server::service:             sigul_server
