@@ -161,10 +161,6 @@ For security reasons the Sigul Server should be highly isolated and not accept i
 ##### `bridge_hostname` (required)
 The hostname of your Sigul Bridge that will relay requests to this Sigul Server.
 
-##### `gpg_kludge` (required)
-This must be set to `true` on hosts where gpg defaults to gpg2 until such time that Sigul can work acceptably with gpg2.  For more details, see:
-    https://bugzilla.redhat.com/show_bug.cgi?id=1329747
-
 ##### `nss_password` (required)
 Password used to protect the NSS certificate database.
 
@@ -182,9 +178,6 @@ Instance is to be started at boot.  Either `true` (default) or `false`.
 
 ##### `ensure`
 Instance is to be `'running'` (default) or `'stopped'`.  Alternatively, a Boolean value may also be used with `true` equivalent to `'running'` and `false` equivalent to `'stopped'`.
-
-##### `gpg_kludge_packages`
-An array of package names needed for the kludging the Sigul installation to work around issues with GPGME.  This is only used if *gpg_kludge* is `true`.
 
 ##### `service`
 The service name of the Sigul Server.

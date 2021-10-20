@@ -19,6 +19,16 @@ Template
 
 All notable changes to this project (since v1.1.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [3.0.0] WIP
+### Added
+### Changed
+### Deprecated
+### Removed
+- kludge support where gpg1 was required for older Sigul builds
+- `sigul::server::gpg_kludge` and `sigul::server::gpg_kludge_packages` parameters
+### Fixed
+### Security
+
 ## [2.2.0] 2019-12-28
 ### Added
 - Fedora 31 support

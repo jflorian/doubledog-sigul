@@ -26,8 +26,6 @@ class sigul::server (
         Variant[Boolean, Enum['running', 'stopped']] $ensure,
         String[1]               $database_path,
         Boolean                 $enable,
-        Boolean                 $gpg_kludge,
-        Array[String[1], 1]     $gpg_kludge_packages,
         Array[String[1], 1]     $packages,
         String[1]               $service,
     ) {
@@ -36,17 +34,6 @@ class sigul::server (
 
     package { $packages:
         ensure => installed,
-    }
-
-    if $gpg_kludge {
-        package { $gpg_kludge_packages:
-            ensure => installed,
-        }
-
-        -> file { '/usr/bin/gpg':
-            ensure => 'link',
-            target => 'gpg1',
-        }
     }
 
     file {

@@ -37,9 +37,6 @@ sigul::client::packages:
 sigul::server::database_path:       /var/lib/sigul/server.sqlite
 sigul::server::enable:              true
 sigul::server::ensure:              running
-sigul::server::gpg_kludge:          false
-sigul::server::gpg_kludge_packages:
-    - gnupg1
 sigul::server::packages:
     - sigul-server
 sigul::server::service:             sigul_server
