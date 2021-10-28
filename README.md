@@ -158,6 +158,9 @@ This class manages a host as a Sigul Server.
 
 For security reasons the Sigul Server should be highly isolated and not accept incoming network connections.  Its sole mode of communication should be with the Sigul Bridge via connections that the Sigul Server itself establishes.
 
+##### `allowed_key_types`
+An array of allowable key types.  The default is `ECC` only.
+
 ##### `bridge_hostname` (required)
 The hostname of your Sigul Bridge that will relay requests to this Sigul Server.
 

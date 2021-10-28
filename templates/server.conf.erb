@@ -53,6 +53,10 @@ gnupg-key-usage: <%= @gnupg_key_usage %>
 # Length of key passphrases used for newly created keys
 passphrase-length: <%= @passphrase_length %>
 
+[keys]
+# Types of keys allowed
+allowed-key-types: <%= @allowed_key_types.flatten.join(',') %>
+
 [daemon]
 # The user to run as
 unix-user: sigul

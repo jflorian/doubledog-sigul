@@ -20,6 +20,7 @@
 
 
 class sigul::server (
+        Array[String[1], 1]         $allowed_key_types,
         Stdlib::Host                $bridge_hostname,
         Stdlib::Port                $bridge_port,
         Stdlib::AbsolutePath        $gnupg_home,
