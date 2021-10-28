@@ -29,7 +29,7 @@ class sigul::bridge (
         Integer[1,65535]        $server_listen_port,
         Stdlib::AbsolutePath    $top_dir,
         String[1]               $web,
-        Variant[Boolean, Enum['running', 'stopped']] $ensure,
+        Stdlib::Ensure::Service $ensure,
         Boolean                 $enable,
         Stdlib::AbsolutePath    $koji_dir,
         String[1]               $service,

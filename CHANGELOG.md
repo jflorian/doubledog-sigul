@@ -38,6 +38,9 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
     - `sigul::bridge::top_dir`
     - `sigul::client::config::filename`
     - `sigul::server::database_path`
+- Boolean values no longer accepted for these parameters:
+    - `sigul::bridge::ensure`
+    - `sigul::server::ensure`
 
 ### Deprecated
 ### Removed

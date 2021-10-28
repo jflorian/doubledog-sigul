@@ -100,7 +100,7 @@ TCP port number on which the Sigul Bridge expects Sigul Client connections.  The
 Instance is to be started at boot.  Either `true` (default) or `false`.
 
 ##### `ensure`
-Instance is to be `'running'` (default) or `'stopped'`.  Alternatively, a Boolean value may also be used with `true` equivalent to `'running'` and `false` equivalent to `'stopped'`.
+Instance is to be `'running'` (default) or `'stopped'`.
 
 ##### `home_dir`
 Absolute path to the home directory of the `sigul` user.  See `getent passwd sigul` on your Bridge.  Defaults to `'/var/lib/sigul'` to match packaging defaults of supported platform.
@@ -198,7 +198,7 @@ Absolute path to the server's SQLite database.  Defaults to `'/var/lib/sigul/ser
 Instance is to be started at boot.  Either `true` (default) or `false`.
 
 ##### `ensure`
-Instance is to be `'running'` (default) or `'stopped'`.  Alternatively, a Boolean value may also be used with `true` equivalent to `'running'` and `false` equivalent to `'stopped'`.
+Instance is to be `'running'` (default) or `'stopped'`.
 
 ##### `service`
 The service name of the Sigul Server.

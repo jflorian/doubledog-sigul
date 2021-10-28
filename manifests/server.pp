@@ -29,7 +29,7 @@ class sigul::server (
         String[1]                   $nss_password,
         Optional[Array[String[1]]]  $proxy_usernames,
         String[1]                   $server_cert_nickname,
-        Variant[Boolean, Enum['running', 'stopped']] $ensure,
+        Stdlib::Ensure::Service     $ensure,
         Stdlib::AbsolutePath        $database_path,
         Boolean                     $enable,
         Array[String[1], 1]         $packages,
