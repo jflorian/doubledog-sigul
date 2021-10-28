@@ -1,5 +1,5 @@
 # This file is part of the doubledog-sigul Puppet module.
-# Copyright 2017-2019 John Florian
+# Copyright 2017-2021 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 ---
@@ -34,6 +34,7 @@ sigul::client::packages:
     - sigul
 
 
+sigul::server::bridge_port:         44333
 sigul::server::database_path:       /var/lib/sigul/server.sqlite
 sigul::server::enable:              true
 sigul::server::ensure:              running

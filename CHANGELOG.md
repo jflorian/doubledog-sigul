@@ -1,6 +1,6 @@
 <!--
 This file is part of the doubledog-sigul Puppet module.
-Copyright 2018-2019 John Florian
+Copyright 2018-2021 John Florian
 SPDX-License-Identifier: GPL-3.0-or-later
 
 Template
@@ -21,6 +21,8 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 
 ## [3.0.0] WIP
 ### Added
+- new `sigul::server` parameters:
+    - `sigul::server::bridge_port`
 ### Changed
 - `sigul::server::packages` now includes `python3-cryptography`
 ### Deprecated

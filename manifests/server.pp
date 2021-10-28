@@ -15,12 +15,13 @@
 # === Copyright
 #
 # This file is part of the doubledog-sigul Puppet module.
-# Copyright 2016-2019 John Florian
+# Copyright 2016-2021 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
 class sigul::server (
         String[1]               $bridge_hostname,
+        Integer[1,65535]        $bridge_port,
         String[1]               $nss_password,
         String[1]               $server_cert_nickname,
         Variant[Boolean, Enum['running', 'stopped']] $ensure,

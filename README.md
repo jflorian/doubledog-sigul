@@ -1,6 +1,6 @@
 <!--
 This file is part of the doubledog-sigul Puppet module.
-Copyright 2018 John Florian <jflorian@doubledog.org>
+Copyright 2018-2021 John Florian <jflorian@doubledog.org>
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
@@ -160,6 +160,9 @@ For security reasons the Sigul Server should be highly isolated and not accept i
 
 ##### `bridge_hostname` (required)
 The hostname of your Sigul Bridge that will relay requests to this Sigul Server.
+
+##### `bridge_port`
+TCP port number on the Sigul Bridge to which the Sigul Server is to connect.  The default is `44333`.
 
 ##### `nss_password` (required)
 Password used to protect the NSS certificate database.
