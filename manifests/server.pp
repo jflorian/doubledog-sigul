@@ -20,7 +20,7 @@
 
 
 class sigul::server (
-        String[1]                   $bridge_hostname,
+        Stdlib::Host                $bridge_hostname,
         Stdlib::Port                $bridge_port,
         Boolean                     $lenient_username_check,
         Integer[0]                  $max_file_payload_size,

@@ -45,6 +45,10 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
     - `sigul::bridge::downloads`
     - `sigul::bridge::hub`
     - `sigul::bridge::web`
+- enforce hostname/IP address format for these parameters:
+    - `sigul::client::config::bridge_hostname`
+    - `sigul::client::config::server_hostname`
+    - `sigul::server::bridge_hostname`
 ### Deprecated
 ### Removed
 - kludge support where gpg1 was required for older Sigul builds

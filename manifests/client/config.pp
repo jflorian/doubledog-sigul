@@ -15,8 +15,8 @@
 
 
 define sigul::client::config (
-        String[1]               $bridge_hostname,
-        String[1]               $server_hostname,
+        Stdlib::Host            $bridge_hostname,
+        Stdlib::Host            $server_hostname,
         Variant[Boolean, Enum['present', 'absent']] $ensure='present',
         String[1]               $client_cert_nickname='sigul-client-cert',
         Stdlib::AbsolutePath    $filename=$title,
