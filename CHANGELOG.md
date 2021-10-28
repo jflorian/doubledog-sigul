@@ -41,7 +41,10 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 - Boolean values no longer accepted for these parameters:
     - `sigul::bridge::ensure`
     - `sigul::server::ensure`
-
+- enforce URL format for these parameters:
+    - `sigul::bridge::downloads`
+    - `sigul::bridge::hub`
+    - `sigul::bridge::web`
 ### Deprecated
 ### Removed
 - kludge support where gpg1 was required for older Sigul builds
