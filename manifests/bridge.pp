@@ -17,7 +17,7 @@
 
 class sigul::bridge (
         String[1]               $bridge_cert_nickname,
-        Integer[1,65535]        $client_listen_port,
+        Stdlib::Port            $client_listen_port,
         String[1]               $downloads,
         Stdlib::AbsolutePath    $home_dir,
         String[1]               $hub,
@@ -26,7 +26,7 @@ class sigul::bridge (
         String[1]               $nss_min_tls,
         String[1]               $nss_password,
         Array[String[1], 1]     $packages,
-        Integer[1,65535]        $server_listen_port,
+        Stdlib::Port            $server_listen_port,
         Stdlib::AbsolutePath    $top_dir,
         String[1]               $web,
         Stdlib::Ensure::Service $ensure,
