@@ -38,6 +38,7 @@ sigul::server::allowed_key_types:
     - ECC
 sigul::server::bridge_port:             44333
 sigul::server::database_path:           /var/lib/sigul/server.sqlite
+sigul::server::ecc_default_curve:       SECP256R1
 sigul::server::enable:                  true
 sigul::server::ensure:                  running
 sigul::server::gnupg_home:              /var/lib/sigul/gnupg

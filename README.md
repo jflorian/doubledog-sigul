@@ -167,6 +167,9 @@ The hostname of your Sigul Bridge that will relay requests to this Sigul Server.
 ##### `bridge_port`
 TCP port number on the Sigul Bridge to which the Sigul Server is to connect.  The default is `44333`.
 
+##### `ecc_default_curve`
+Curve to use for ECC.  Supported values are the class names found [here](https://cryptography.io/en/latest/hazmat/primitives/asymmetric/ec.html#cryptography.hazmat.primitives.asymmetric.ec.EllipticCurve)  The default is `SECP256R1`.
+
 ##### `gnupg_home`
 Absolute path to directory containing GPG configuration and key rings.  Defaults to `/var/lib/sigul/gnupg`.
 
