@@ -167,6 +167,9 @@ TCP port number on the Sigul Bridge to which the Sigul Server is to connect.  Th
 ##### `max_file_payload_size`
 Maximum accepted size of payload stored on disk for one request.  The default is `1073741824` (1 GiB).
 
+##### `max_memory_payload_size`
+Maximum accepted size of payload stored in the Sigul Servers memory for one request.  The default is `1048576` (1 MiB).
+
 ##### `nss_password` (required)
 Password used to protect the NSS certificate database.
 
