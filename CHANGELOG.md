@@ -39,6 +39,7 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
     - `sigul::server::allowed_key_types`
     - `sigul::server::ecc_default_curve`
     - `sigul::server::keys_storage`
+    - `sigul::server::daemon_user`
 - dependency on `puppetlabs/stdlib`
 ### Changed
 - `sigul::server::packages` now includes `python3-cryptography`

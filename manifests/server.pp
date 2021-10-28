@@ -23,6 +23,7 @@ class sigul::server (
         Array[String[1], 1]         $allowed_key_types,
         Stdlib::Host                $bridge_hostname,
         Stdlib::Port                $bridge_port,
+        String[1]                   $daemon_user,
         String[1]                   $ecc_default_curve,
         Stdlib::AbsolutePath        $gnupg_home,
         Integer[768]                $gnupg_key_length,
