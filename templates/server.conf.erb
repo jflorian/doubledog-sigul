@@ -24,6 +24,8 @@ max-rpms-payload-size: <%= @max_rpms_payload_size %>
 server-cert-nickname: <%= @server_cert_nickname %>
 # Maximum number of seconds to wait for signing one package
 signing-timeout: <%= @signing_timeout %>
+# Whether to relax the CN vs user name check
+lenient-username-check: <%= @lenient_username_check %>
 
 [database]
 # Path to a SQLite database
