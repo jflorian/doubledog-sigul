@@ -25,6 +25,7 @@ class sigul::server (
         Stdlib::AbsolutePath        $gnupg_home,
         Integer[768]                $gnupg_key_length,
         String[1]                   $gnupg_key_type,
+        String[1]                   $gnupg_key_usage,
         Integer[768]                $gnupg_subkey_length,
         String[0]                   $gnupg_subkey_type,
         Boolean                     $lenient_username_check,

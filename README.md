@@ -173,6 +173,9 @@ Primary key length for newly created keys.  Defaults to `1024` (bits).
 ##### `gnupg_key_type`
 Primary key type for newly created keys.  Defaults to `DSA`.
 
+##### `gnupg_key_usage`
+Key usage flags for newly created keys.  Defaults to `sign`.
+
 ##### `gnupg_subkey_length`
 Subordinate-key length for newly created keys.  Defaults to `2048` (bits).
 
