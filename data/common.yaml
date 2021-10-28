@@ -47,6 +47,7 @@ sigul::server::gnupg_key_type:          DSA
 sigul::server::gnupg_key_usage:         sign
 sigul::server::gnupg_subkey_length:     2048
 sigul::server::gnupg_subkey_type:       ELG-E
+sigul::server::keys_storage:            /var/lib/sigul/keys
 sigul::server::lenient_username_check:  false
 sigul::server::max_file_payload_size:   1073741824
 sigul::server::max_memory_payload_size: 1048576

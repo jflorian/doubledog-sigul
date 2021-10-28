@@ -188,6 +188,9 @@ Subordinate-key length for newly created keys.  Defaults to `2048` (bits).
 ##### `gnupg_subkey_type`
 Subordinate-key type for newly created keys.  Use an empty string for no sub-key.  Defaults to `ELG-E`.
 
+##### `keys_storage`
+Absolute path to directory where non-gnupg keys are to be stored.  Defaults to `/var/lib/sigul/keys`.
+
 ##### `lenient_username_check`
 Whether to relax the Common Name (CN) versus user name check.  Either `true` or `false` (default).
 
