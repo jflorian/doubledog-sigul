@@ -20,20 +20,21 @@
 
 
 class sigul::server (
-        String[1]               $bridge_hostname,
-        Integer[1,65535]        $bridge_port,
-        Boolean                 $lenient_username_check,
-        Integer[0]              $max_file_payload_size,
-        Integer[0]              $max_memory_payload_size,
-        Integer[0]              $max_rpms_payload_size,
-        String[1]               $nss_password,
-        String[1]               $server_cert_nickname,
+        String[1]                   $bridge_hostname,
+        Integer[1,65535]            $bridge_port,
+        Boolean                     $lenient_username_check,
+        Integer[0]                  $max_file_payload_size,
+        Integer[0]                  $max_memory_payload_size,
+        Integer[0]                  $max_rpms_payload_size,
+        String[1]                   $nss_password,
+        Optional[Array[String[1]]]  $proxy_usernames,
+        String[1]                   $server_cert_nickname,
         Variant[Boolean, Enum['running', 'stopped']] $ensure,
-        String[1]               $database_path,
-        Boolean                 $enable,
-        Array[String[1], 1]     $packages,
-        String[1]               $service,
-        Integer[0]              $signing_timeout,
+        String[1]                   $database_path,
+        Boolean                     $enable,
+        Array[String[1], 1]         $packages,
+        String[1]                   $service,
+        Integer[0]                  $signing_timeout,
     ) {
 
     include 'sigul'

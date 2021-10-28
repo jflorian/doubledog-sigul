@@ -26,6 +26,12 @@ server-cert-nickname: <%= @server_cert_nickname %>
 signing-timeout: <%= @signing_timeout %>
 # Whether to relax the CN vs user name check
 lenient-username-check: <%= @lenient_username_check %>
+# Which CN's are allowed to use different user names
+<% if @proxy_usernames -%>
+proxy-usernames: <%= @proxy_usernames.flatten.join(',') %>
+<% else -%>
+; proxy-usernames:
+<% end -%>
 
 [database]
 # Path to a SQLite database

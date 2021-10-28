@@ -28,6 +28,7 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
     - `sigul::server::max_rpms_payload_size`
     - `sigul::server::signing_timeout`
     - `sigul::server::lenient_username_check`
+    - `sigul::server::proxy_usernames`
 ### Changed
 - `sigul::server::packages` now includes `python3-cryptography`
 ### Deprecated

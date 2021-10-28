@@ -182,6 +182,9 @@ Password used to protect the NSS certificate database.
 ##### `packages`
 An array of package names needed for the Sigul Server installation.  The default should be correct for supported platforms.
 
+##### `proxy_usernames`
+An array of Common Names (CNs) which are allowed to use different user names.  The default is `null` (none).
+
 ##### `server_cert_nickname` (required)
 This must be the nickname given to the Sigul Server's certificate within the NSS certificate database.  The named certificate is used to authenticate the Sigul Server to the Sigul Bridge.
 
