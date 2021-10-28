@@ -42,6 +42,8 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
     - `sigul::server::daemon_user`
     - `sigul::server::daemon_group`
     - `sigul::server::nss_dir`
+    - `sigul::server::nss_max_tls`
+    - `sigul::server::nss_min_tls`
 - dependency on `puppetlabs/stdlib`
 ### Changed
 - `sigul::server::packages` now includes `python3-cryptography`

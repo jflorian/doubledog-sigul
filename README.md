@@ -112,7 +112,7 @@ Absolute path to the directory that is to contain the Koji integration files: co
 Maximum accepted total size of all RPM payloads stored on disk for one request.  The default is `10737418240` (10 GiB).
 
 ##### `nss_min_tls`, `nss_max_tls`
-Minimum and maximum versions of TLS used.  The default is `'tls1.2'` for both.
+Minimum and maximum versions of TLS to be used.  The default is `'tls1.2'` for both.
 
 ##### `server_listen_port`
 TCP port number on which the Sigul Bridge expects Sigul Server connections.  The default is `44333`.
@@ -211,6 +211,9 @@ Maximum accepted total size of all RPM payloads stored on disk for one request. 
 
 ##### `nss_dir`
 Absolute path to directory containing the NSS database.  Defaults to `/var/lib/sigul`.
+
+##### `nss_min_tls`, `nss_max_tls`
+Minimum and maximum versions of TLS to be used.  The default is `'tls1.2'` for both.
 
 ##### `nss_password` (required)
 Password used to protect the NSS certificate database.

@@ -38,6 +38,8 @@ class sigul::server (
         Integer[0]                  $max_memory_payload_size,
         Integer[0]                  $max_rpms_payload_size,
         Stdlib::AbsolutePath        $nss_dir,
+        String[1]                   $nss_max_tls,
+        String[1]                   $nss_min_tls,
         String[1]                   $nss_password,
         Integer[1]                  $passphrase_length,
         Optional[Array[String[1]]]  $proxy_usernames,

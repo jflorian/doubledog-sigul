@@ -55,6 +55,8 @@ sigul::server::max_file_payload_size:   1073741824
 sigul::server::max_memory_payload_size: 1048576
 sigul::server::max_rpms_payload_size:   10737418240
 sigul::server::nss_dir:                 /var/lib/sigul
+sigul::server::nss_max_tls:             tls1.2
+sigul::server::nss_min_tls:             tls1.2
 sigul::server::packages:
     - python3-cryptography
     - sigul-server
