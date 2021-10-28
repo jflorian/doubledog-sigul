@@ -32,6 +32,7 @@ class sigul::server (
         Boolean                 $enable,
         Array[String[1], 1]     $packages,
         String[1]               $service,
+        Integer[0]              $signing_timeout,
     ) {
 
     include 'sigul'

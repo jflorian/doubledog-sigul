@@ -45,3 +45,4 @@ sigul::server::packages:
     - python3-cryptography
     - sigul-server
 sigul::server::service:                 sigul_server
+sigul::server::signing_timeout:         60

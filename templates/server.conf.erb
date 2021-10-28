@@ -23,7 +23,7 @@ max-rpms-payload-size: <%= @max_rpms_payload_size %>
 # Nickname of the server's certificate in the NSS database specified below
 server-cert-nickname: <%= @server_cert_nickname %>
 # Maximum number of seconds to wait for signing one package
-; signing-timeout: 60
+signing-timeout: <%= @signing_timeout %>
 
 [database]
 # Path to a SQLite database

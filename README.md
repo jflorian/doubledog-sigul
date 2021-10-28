@@ -182,6 +182,9 @@ An array of package names needed for the Sigul Server installation.  The default
 ##### `server_cert_nickname` (required)
 This must be the nickname given to the Sigul Server's certificate within the NSS certificate database.  The named certificate is used to authenticate the Sigul Server to the Sigul Bridge.
 
+##### `signing_timeout`
+Maximum number of seconds to wait for signing one package.  The default is `60` (1 minute).
+
 ##### `database_path`
 Filesystem path to the server's SQLite database.  Defaults to `'/var/lib/sigul/server.sqlite'`.
 
