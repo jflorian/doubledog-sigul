@@ -51,7 +51,7 @@ gnupg-subkey-length: <%= @gnupg_subkey_length %>
 # Default key usage flags for newly created keys
 gnupg-key-usage: <%= @gnupg_key_usage %>
 # Length of key passphrases used for newly created keys
-; passphrase-length: 64
+passphrase-length: <%= @passphrase_length %>
 
 [daemon]
 # The user to run as

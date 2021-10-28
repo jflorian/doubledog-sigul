@@ -200,6 +200,9 @@ Password used to protect the NSS certificate database.
 ##### `packages`
 An array of package names needed for the Sigul Server installation.  The default should be correct for supported platforms.
 
+##### `passphrase_length`
+Length of key passphrases for newly created keys.  Defaults to `64` (characters).
+
 ##### `proxy_usernames`
 An array of Common Names (CNs) which are allowed to use different user names.  The default is `null` (none).
 

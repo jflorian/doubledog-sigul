@@ -51,6 +51,7 @@ sigul::server::max_rpms_payload_size:   10737418240
 sigul::server::packages:
     - python3-cryptography
     - sigul-server
+sigul::server::passphrase_length:       64
 sigul::server::proxy_usernames:         null
 sigul::server::service:                 sigul_server
 sigul::server::signing_timeout:         60
