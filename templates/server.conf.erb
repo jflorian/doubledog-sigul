@@ -19,7 +19,7 @@ max-file-payload-size: <%= @max_file_payload_size %>
 # Maximum accepted size of payload stored in server's memory
 max-memory-payload-size: <%= @max_memory_payload_size %>
 # Maximum accepted total size of all RPM payloads stored on disk for one request
-; max-rpms-payload-size: 10737418240
+max-rpms-payload-size: <%= @max_rpms_payload_size %>
 # Nickname of the server's certificate in the NSS database specified below
 server-cert-nickname: <%= @server_cert_nickname %>
 # Maximum number of seconds to wait for signing one package

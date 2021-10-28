@@ -25,6 +25,7 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
     - `sigul::server::bridge_port`
     - `sigul::server::max_file_payload_size`
     - `sigul::server::max_memory_payload_size`
+    - `sigul::server::max_rpms_payload_size`
 ### Changed
 - `sigul::server::packages` now includes `python3-cryptography`
 ### Deprecated

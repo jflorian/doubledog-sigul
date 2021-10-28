@@ -170,6 +170,9 @@ Maximum accepted size of payload stored on disk for one request.  The default is
 ##### `max_memory_payload_size`
 Maximum accepted size of payload stored in the Sigul Servers memory for one request.  The default is `1048576` (1 MiB).
 
+##### `max_rpms_payload_size`
+Maximum accepted total size of all RPM payloads stored on disk for one request.  The default is `10737418240` (10 GiB).
+
 ##### `nss_password` (required)
 Password used to protect the NSS certificate database.
 

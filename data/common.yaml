@@ -40,6 +40,7 @@ sigul::server::enable:                  true
 sigul::server::ensure:                  running
 sigul::server::max_file_payload_size:   1073741824
 sigul::server::max_memory_payload_size: 1048576
+sigul::server::max_rpms_payload_size:   10737418240
 sigul::server::packages:
     - python3-cryptography
     - sigul-server
