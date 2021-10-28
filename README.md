@@ -167,6 +167,9 @@ The hostname of your Sigul Bridge that will relay requests to this Sigul Server.
 ##### `bridge_port`
 TCP port number on the Sigul Bridge to which the Sigul Server is to connect.  The default is `44333`.
 
+##### `daemon_group`
+Name of the group account that the daemon is to run as.  The default is `sigul`.
+
 ##### `daemon_user`
 Name of the user account that the daemon is to run as.  The default is `sigul`.
 

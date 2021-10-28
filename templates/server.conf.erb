@@ -66,7 +66,7 @@ keys-storage: <%= @keys_storage %>
 # The user to run as
 unix-user: <%= @daemon_user %>
 # The group to run as
-unix-group: sigul
+unix-group: <%= @daemon_group %>
 
 [nss]
 # Path to a directory containing a NSS database

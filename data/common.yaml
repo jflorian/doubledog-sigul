@@ -37,6 +37,7 @@ sigul::client::packages:
 sigul::server::allowed_key_types:
     - ECC
 sigul::server::bridge_port:             44333
+sigul::server::daemon_group:            sigul
 sigul::server::daemon_user:             sigul
 sigul::server::database_path:           /var/lib/sigul/server.sqlite
 sigul::server::ecc_default_curve:       SECP256R1
