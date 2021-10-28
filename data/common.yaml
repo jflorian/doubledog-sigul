@@ -38,6 +38,7 @@ sigul::server::bridge_port:             44333
 sigul::server::database_path:           /var/lib/sigul/server.sqlite
 sigul::server::enable:                  true
 sigul::server::ensure:                  running
+sigul::server::gnupg_home:              /var/lib/sigul/gnupg
 sigul::server::lenient_username_check:  false
 sigul::server::max_file_payload_size:   1073741824
 sigul::server::max_memory_payload_size: 1048576

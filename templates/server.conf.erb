@@ -38,8 +38,8 @@ proxy-usernames: <%= @proxy_usernames.flatten.join(',') %>
 database-path: <%= @database_path %>
 
 [gnupg]
-# Path to a directory containing GPG configuration and keyrings
-; gnupg-home: @localstatedir@/lib/sigul/gnupg
+# Path to a directory containing GPG configuration and key rings
+gnupg-home: <%= @gnupg_home %>
 # Default primary key type for newly created keys
 ; gnupg-key-type: DSA
 # Default primary key length for newly created keys

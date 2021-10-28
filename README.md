@@ -164,6 +164,9 @@ The hostname of your Sigul Bridge that will relay requests to this Sigul Server.
 ##### `bridge_port`
 TCP port number on the Sigul Bridge to which the Sigul Server is to connect.  The default is `44333`.
 
+##### `gnupg_home`
+Absolute path to directory containing GPG configuration and key rings.  Defaults to `/var/lib/sigul/gnupg`.
+
 ##### `lenient_username_check`
 Whether to relax the Common Name (CN) versus user name check.  Either `true` or `false` (default).
 
