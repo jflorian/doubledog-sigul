@@ -70,7 +70,7 @@ unix-group: <%= @daemon_group %>
 
 [nss]
 # Path to a directory containing a NSS database
-; nss-dir: @localstatedir@/lib/sigul
+nss-dir: <%= @nss_dir %>
 # Password for accessing the NSS database.  If not specified, the server will
 # ask on startup
 nss-password: <%= @nss_password %>
