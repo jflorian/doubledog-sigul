@@ -30,7 +30,7 @@ class sigul::server (
         Optional[Array[String[1]]]  $proxy_usernames,
         String[1]                   $server_cert_nickname,
         Variant[Boolean, Enum['running', 'stopped']] $ensure,
-        String[1]                   $database_path,
+        Stdlib::AbsolutePath        $database_path,
         Boolean                     $enable,
         Array[String[1], 1]         $packages,
         String[1]                   $service,

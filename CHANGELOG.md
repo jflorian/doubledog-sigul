@@ -29,8 +29,16 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
     - `sigul::server::signing_timeout`
     - `sigul::server::lenient_username_check`
     - `sigul::server::proxy_usernames`
+- dependency on `puppetlabs/stdlib`
 ### Changed
 - `sigul::server::packages` now includes `python3-cryptography`
+- enforce absolute paths for these parameters:
+    - `sigul::bridge::home_dir`
+    - `sigul::bridge::koji_dir`
+    - `sigul::bridge::top_dir`
+    - `sigul::client::config::filename`
+    - `sigul::server::database_path`
+
 ### Deprecated
 ### Removed
 - kludge support where gpg1 was required for older Sigul builds

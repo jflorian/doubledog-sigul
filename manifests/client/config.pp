@@ -10,7 +10,7 @@
 # === Copyright
 #
 # This file is part of the doubledog-sigul Puppet module.
-# Copyright 2016-2019 John Florian
+# Copyright 2016-2021 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
@@ -19,7 +19,7 @@ define sigul::client::config (
         String[1]               $server_hostname,
         Variant[Boolean, Enum['present', 'absent']] $ensure='present',
         String[1]               $client_cert_nickname='sigul-client-cert',
-        String[1]               $filename=$title,
+        Stdlib::AbsolutePath    $filename=$title,
         String[1]               $group='sigul',
         Pattern[/[0-7]{4}/]     $mode='0600',
         Optional[String[1]]     $nss_password=undef,

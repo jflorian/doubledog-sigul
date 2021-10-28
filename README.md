@@ -91,7 +91,7 @@ An array of package names needed for the Sigul Bridge installation.  The default
 URL of your Koji Web service.
 
 ##### `top_dir` (required)
-Directory containing Koji's `repos/` directory.
+Absolute path to the directory containing Koji's `repos/` directory.
 
 ##### `client_listen_port`
 TCP port number on which the Sigul Bridge expects Sigul Client connections.  The default is `44334`.
@@ -103,10 +103,10 @@ Instance is to be started at boot.  Either `true` (default) or `false`.
 Instance is to be `'running'` (default) or `'stopped'`.  Alternatively, a Boolean value may also be used with `true` equivalent to `'running'` and `false` equivalent to `'stopped'`.
 
 ##### `home_dir`
-Home directory of the `sigul` user.  See `getent passwd sigul` on your Bridge.  Defaults to `'/var/lib/sigul'` to match packaging defaults of supported platform.
+Absolute path to the home directory of the `sigul` user.  See `getent passwd sigul` on your Bridge.  Defaults to `'/var/lib/sigul'` to match packaging defaults of supported platform.
 
 ##### `koji_dir`
-Directory that is to contain the Koji integration files: configuration, certificates, keys, etc.  Defaults to `'`*home_dir*`/.koji'`.
+Absolute path to the directory that is to contain the Koji integration files: configuration, certificates, keys, etc.  Defaults to `'`*home_dir*`/.koji'`.
 
 ##### `max_rpms_payload_size`
 Maximum accepted total size of all RPM payloads stored on disk for one request.  The default is `10737418240` (10 GiB).
@@ -192,7 +192,7 @@ This must be the nickname given to the Sigul Server's certificate within the NSS
 Maximum number of seconds to wait for signing one package.  The default is `60` (1 minute).
 
 ##### `database_path`
-Filesystem path to the server's SQLite database.  Defaults to `'/var/lib/sigul/server.sqlite'`.
+Absolute path to the server's SQLite database.  Defaults to `'/var/lib/sigul/server.sqlite'`.
 
 ##### `enable`
 Instance is to be started at boot.  Either `true` (default) or `false`.
@@ -235,7 +235,7 @@ Group name or GID to which the configuration file belongs.
 File mode for the configuration file.
 
 ##### `filename`
-This may be used in place of *namevar* if it's beneficial to give namevar an arbitrary value.  This should specify the absolute filesystem path to the configuration file.
+This may be used in place of *namevar* if it's beneficial to give namevar an arbitrary value.  This must specify an absolute path to the configuration file.
 
 ##### `nss_password`
 Password for the client's NSS certificate database.  The default is to prompt the client at run-time for this password.

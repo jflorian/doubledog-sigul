@@ -19,7 +19,7 @@ class sigul::bridge (
         String[1]               $bridge_cert_nickname,
         Integer[1,65535]        $client_listen_port,
         String[1]               $downloads,
-        String[1]               $home_dir,
+        Stdlib::AbsolutePath    $home_dir,
         String[1]               $hub,
         Integer[0]              $max_rpms_payload_size,
         String[1]               $nss_max_tls,
@@ -27,11 +27,11 @@ class sigul::bridge (
         String[1]               $nss_password,
         Array[String[1], 1]     $packages,
         Integer[1,65535]        $server_listen_port,
-        String[1]               $top_dir,
+        Stdlib::AbsolutePath    $top_dir,
         String[1]               $web,
         Variant[Boolean, Enum['running', 'stopped']] $ensure,
         Boolean                 $enable,
-        String[1]               $koji_dir,
+        Stdlib::AbsolutePath    $koji_dir,
         String[1]               $service,
     ) {
 
