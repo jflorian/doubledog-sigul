@@ -11,7 +11,7 @@
 # === Copyright
 #
 # This file is part of the doubledog-sigul Puppet module.
-# Copyright 2016-2019 John Florian
+# Copyright 2016-2021 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
@@ -21,7 +21,7 @@ class sigul::bridge (
         String[1]               $downloads,
         String[1]               $home_dir,
         String[1]               $hub,
-        Integer                 $max_rpms_payload_size,
+        Integer[0]              $max_rpms_payload_size,
         String[1]               $nss_max_tls,
         String[1]               $nss_min_tls,
         String[1]               $nss_password,

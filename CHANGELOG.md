@@ -31,6 +31,7 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 - `sigul::server::gpg_kludge` and `sigul::server::gpg_kludge_packages` parameters
 ### Fixed
 - CentOS 8 support for `sigul::bridge` and `sigul::server`
+- don't allow negative values for `sigul::bridge::max_rpms_payload_size`
 ### Security
 
 ## [2.2.0] 2019-12-28
