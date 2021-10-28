@@ -22,6 +22,7 @@
 class sigul::server (
         String[1]               $bridge_hostname,
         Integer[1,65535]        $bridge_port,
+        Integer[0]              $max_file_payload_size,
         String[1]               $nss_password,
         String[1]               $server_cert_nickname,
         Variant[Boolean, Enum['running', 'stopped']] $ensure,

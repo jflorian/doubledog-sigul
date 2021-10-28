@@ -23,6 +23,7 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 ### Added
 - new `sigul::server` parameters:
     - `sigul::server::bridge_port`
+    - `sigul::server::max_file_payload_size`
 ### Changed
 - `sigul::server::packages` now includes `python3-cryptography`
 ### Deprecated
