@@ -41,7 +41,7 @@ database-path: <%= @database_path %>
 # Path to a directory containing GPG configuration and key rings
 gnupg-home: <%= @gnupg_home %>
 # Default primary key type for newly created keys
-; gnupg-key-type: DSA
+gnupg-key-type: <%= @gnupg_key_type %>
 # Default primary key length for newly created keys
 ; gnupg-key-length: 1024
 # Default subkey type for newly created keys, empty for no subkey
