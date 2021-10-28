@@ -47,7 +47,7 @@ gnupg-key-length: <%= @gnupg_key_length %>
 # Default subkey type for newly created keys, empty for no subkey
 gnupg-subkey-type: <%= @gnupg_subkey_type %>
 # Default subkey length for newly created keys if gnupg-subkey-type is not empty
-; gnupg-subkey-length: 2048
+gnupg-subkey-length: <%= @gnupg_subkey_length %>
 # Default key usage flags for newly created keys
 ; gnupg-key-usage: sign
 # Length of key passphrases used for newly created keys
