@@ -23,6 +23,7 @@ class sigul::server (
         Stdlib::Host                $bridge_hostname,
         Stdlib::Port                $bridge_port,
         Stdlib::AbsolutePath        $gnupg_home,
+        Integer[768]                $gnupg_key_length,
         String[1]                   $gnupg_key_type,
         Boolean                     $lenient_username_check,
         Integer[0]                  $max_file_payload_size,

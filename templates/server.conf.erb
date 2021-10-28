@@ -43,7 +43,7 @@ gnupg-home: <%= @gnupg_home %>
 # Default primary key type for newly created keys
 gnupg-key-type: <%= @gnupg_key_type %>
 # Default primary key length for newly created keys
-; gnupg-key-length: 1024
+gnupg-key-length: <%= @gnupg_key_length %>
 # Default subkey type for newly created keys, empty for no subkey
 ; gnupg-subkey-type: ELG-E
 # Default subkey length for newly created keys if gnupg-subkey-type is not empty
