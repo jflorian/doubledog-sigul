@@ -21,7 +21,7 @@ define sigul::client::config (
         String[1]               $client_cert_nickname='sigul-client-cert',
         Stdlib::AbsolutePath    $filename=$title,
         String[1]               $group='sigul',
-        Pattern[/[0-7]{4}/]     $mode='0600',
+        Stdlib::Filemode        $mode='0600',
         Optional[String[1]]     $nss_password=undef,
         String[1]               $owner='root',
     ) {
