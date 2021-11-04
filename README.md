@@ -22,7 +22,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 ## Description
 
-This module lets you manage Sigul for its Bridge and Server as well as its Clients.
+This module lets you manage [Sigul](https://pagure.io/sigul) deployments, including the Bridge, Server and Clients.
 
 ## Setup
 
@@ -33,9 +33,9 @@ This module lets you manage Sigul for its Bridge and Server as well as its Clien
 This module optionally depends on and leverages several other Puppet modules to achieve a reliable, integrated solution.  At present these are:
 
 * [doubledog-openssl](https://github.com/jflorian/doubledog-openssl)
-** Only required when using the `sigul::bridge::x509` class
+    * Only required when using the [sigul::bridge::x509](#sigulbridgex509-class) class
 * [puppetlabs-firewall](https://github.com/puppetlabs/puppetlabs-firewall)
-** Only required when using the `sigul::bridge::firewall` class
+    * Only required when using the [sigul::bridge::firewall](#sigulbridgefirewall-class) class
 
 ### Beginning with sigul
 
